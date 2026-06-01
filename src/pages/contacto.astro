@@ -1,0 +1,96 @@
+---
+import Page from "../layouts/Page.astro";
+import { WHATSAPP_URL, WHATSAPP_PHONE, CONTACT_EMAIL, CONTACT_CITY } from "../consts";
+---
+
+<Page
+	title="Contacto · Víctor Kuminov"
+	description="Cuéntame tu caso. Te respondo en menos de 24 h. WhatsApp, email y formulario."
+>
+	<section class="hero">
+		<div class="narrow">
+			<p class="eyebrow">Contacto</p>
+			<h1>Hablemos</h1>
+			<p class="lead">Cuéntame tu caso, sin compromiso. Te respondo en menos de 24 h.</p>
+			<div class="btn-row">
+				<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
+			</div>
+			<p class="muted" style="margin-top:1rem">
+				📍 {CONTACT_CITY} · 📱 <a href={WHATSAPP_URL}>{WHATSAPP_PHONE}</a> · ✉️ <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="narrow">
+			<div class="card">
+				<h2>O déjame tus datos</h2>
+				<form id="contact-form">
+					<label>Nombre<input type="text" name="nombre" required /></label>
+					<label>Teléfono o email<input type="text" name="contacto" required /></label>
+					<label>¿Qué tipo de negocio tienes?<input type="text" name="negocio" /></label>
+					<label>¿Qué necesitas?<textarea name="mensaje" rows="4"></textarea></label>
+					<label class="check">
+						<input type="checkbox" name="rgpd" required />
+						<span>He leído y acepto la <a href="/legal/privacidad">Política de Privacidad</a>.</span>
+					</label>
+					<button class="btn btn--cta" type="submit">Enviar</button>
+				</form>
+				<p class="muted" style="margin-top:1rem">Te responderé personalmente. Sin spam, sin compromiso.</p>
+			</div>
+			<p class="muted center" style="margin-top:2rem">
+				🔜 Redes sociales próximamente.
+			</p>
+		</div>
+	</section>
+
+	<script is:inline define:vars={{ CONTACT_EMAIL }}>
+		const form = document.getElementById("contact-form");
+		form?.addEventListener("submit", (e) => {
+			e.preventDefault();
+			const f = e.target;
+			const nombre = f.nombre.value.trim();
+			const contacto = f.contacto.value.trim();
+			const negocio = f.negocio.value.trim();
+			const mensaje = f.mensaje.value.trim();
+			const body =
+				`Nombre: ${nombre}\n` +
+				`Contacto: ${contacto}\n` +
+				`Negocio: ${negocio}\n\n` +
+				`${mensaje}`;
+			const subject = `Nuevo contacto desde kuminov.es — ${nombre}`;
+			window.location.href =
+				`mailto:${CONTACT_EMAIL}?subject=` +
+				encodeURIComponent(subject) +
+				`&body=` +
+				encodeURIComponent(body);
+		});
+	</script>
+</Page>
+
+<style>
+	form label {
+		display: block;
+		margin-bottom: 1rem;
+		font-weight: 700;
+	}
+	form input[type="text"],
+	form textarea {
+		display: block;
+		width: 100%;
+		margin-top: 0.3rem;
+		padding: 0.7em;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 10px;
+		font-family: inherit;
+		font-weight: 400;
+	}
+	.check {
+		display: flex;
+		gap: 0.6rem;
+		align-items: flex-start;
+		font-weight: 400;
+		font-size: 0.95rem;
+	}
+	.check input { margin-top: 0.4rem; }
+</style>

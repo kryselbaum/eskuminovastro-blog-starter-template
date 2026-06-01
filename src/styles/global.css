@@ -5,16 +5,21 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
+	/* Paleta kuminov.es — cálida, asturiana, de confianza */
+	--accent: #2e6f4e;        /* verde Asturias */
+	--accent-dark: #1f4d36;
+	--cta: #c75b39;           /* terracota — botones de acción */
+	--cta-dark: #a8401f;
+	--bg: #faf7f2;            /* crema */
+	--sand: #efe7da;          /* arena (secciones alternas) */
+	--black: 35, 40, 38;
+	--gray: 93, 102, 96;
+	--gray-light: 229, 226, 218;
+	--gray-dark: 60, 66, 62;
+	--gray-gradient: rgba(var(--gray-light), 50%), var(--bg);
 	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+		0 2px 6px rgba(var(--gray), 18%), 0 8px 24px rgba(var(--gray), 18%),
+		0 16px 32px rgba(var(--gray), 18%);
 }
 @font-face {
 	font-family: "Atkinson";
@@ -35,8 +40,7 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background: var(--bg);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
@@ -152,4 +156,166 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* ============================================================
+   kuminov.es — sistema de diseño (componentes)
+   ============================================================ */
+
+a {
+	color: var(--accent-dark);
+	text-underline-offset: 3px;
+}
+
+/* Anchura de página */
+.container {
+	width: 1080px;
+	max-width: calc(100% - 2.5em);
+	margin-inline: auto;
+}
+.narrow {
+	width: 760px;
+	max-width: calc(100% - 2.5em);
+	margin-inline: auto;
+}
+
+/* Secciones */
+.section {
+	padding: 4.5rem 0;
+}
+.section--sand {
+	background: var(--sand);
+}
+.section--green {
+	background: var(--accent);
+	color: #fff;
+}
+.section--green h1,
+.section--green h2,
+.section--green h3 {
+	color: #fff;
+}
+.section h2 {
+	font-size: 2.2em;
+	margin-bottom: 1.5rem;
+}
+.eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: var(--accent);
+	margin-bottom: 0.4rem;
+}
+.lead {
+	font-size: 1.2em;
+	color: rgb(var(--gray-dark));
+}
+
+/* Botones */
+.btn {
+	display: inline-block;
+	padding: 0.85em 1.6em;
+	border-radius: 999px;
+	font-weight: 700;
+	text-decoration: none;
+	line-height: 1;
+	transition: transform 0.08s ease, background 0.15s ease;
+	border: 2px solid transparent;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--cta { background: var(--cta); color: #fff; }
+.btn--cta:hover { background: var(--cta-dark); color: #fff; }
+.btn--wa { background: #25d366; color: #0b3d23; }
+.btn--wa:hover { background: #1fb959; color: #0b3d23; }
+.btn--ghost { background: transparent; border-color: currentColor; color: inherit; }
+.btn--green { background: var(--accent); color: #fff; }
+.btn--green:hover { background: var(--accent-dark); color: #fff; }
+.btn-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.8rem;
+	align-items: center;
+	margin-top: 1.5rem;
+}
+
+/* Hero */
+.hero {
+	padding: 4.5rem 0 3.5rem;
+	background: linear-gradient(180deg, var(--sand), var(--bg));
+}
+.hero h1 {
+	font-size: 3.2em;
+	max-width: 14ch;
+}
+.hero .lead { max-width: 46ch; margin-top: 0.5rem; }
+
+/* Band de confianza */
+.trust {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.2rem 2rem;
+	align-items: center;
+	justify-content: center;
+	padding: 1.2rem 0;
+	color: rgb(var(--gray));
+	font-weight: 700;
+	border-top: 1px solid rgb(var(--gray-light));
+	border-bottom: 1px solid rgb(var(--gray-light));
+}
+
+/* Grids y tarjetas */
+.grid {
+	display: grid;
+	gap: 1.4rem;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.card {
+	background: #fff;
+	border: 1px solid rgb(var(--gray-light));
+	border-radius: 16px;
+	padding: 1.6rem;
+	box-shadow: var(--box-shadow);
+}
+.card h3 { font-size: 1.4em; margin-bottom: 0.4rem; }
+.card--hero { border-color: var(--accent); border-width: 2px; }
+.price {
+	font-size: 1.8em;
+	font-weight: 700;
+	color: var(--accent-dark);
+	margin: 0.2rem 0 0.6rem;
+}
+
+/* Pista / nota */
+.note {
+	background: var(--sand);
+	border-left: 4px solid var(--accent);
+	border-radius: 8px;
+	padding: 1rem 1.2rem;
+}
+.center { text-align: center; }
+.muted { color: rgb(var(--gray)); }
+
+/* Foto */
+.media-round { border-radius: 16px; box-shadow: var(--box-shadow); }
+figure { margin: 0; }
+figcaption { font-size: 0.9rem; color: rgb(var(--gray)); margin-top: 0.5rem; }
+
+.video-placeholder {
+	background: var(--accent-dark);
+	color: #fff;
+	border-radius: 16px;
+	min-height: 220px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 1.5rem;
+	font-weight: 700;
+}
+
+@media (max-width: 720px) {
+	.hero h1 { font-size: 2.4em; }
+	.section { padding: 3rem 0; }
 }

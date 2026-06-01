@@ -1,0 +1,80 @@
+---
+import Page from "../layouts/Page.astro";
+import { WHATSAPP_URL } from "../consts";
+---
+
+<Page
+	title="Precios · Víctor Kuminov"
+	description="Tres precios claros, sin sorpresas: gratis, por horas desde 50 €/h y proyecto completo desde 2.000 €. Mantenimiento desde 300 €/mes. Garantía de satisfacción."
+>
+	<section class="hero">
+		<div class="narrow">
+			<p class="eyebrow">Precios</p>
+			<h1>Precios claros, sin sorpresas</h1>
+			<p class="lead">
+				Te digo lo que cuesta desde el principio. Y te digo también qué necesitas tú y qué no,
+				para que no gastes de más.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="grid">
+				<div class="card">
+					<h3>1 · Gratis</h3>
+					<p class="price">0 €</p>
+					<p class="muted">solo pagas el dominio (~10-15 €/año)</p>
+					<p>Te hago una landing sencilla sin coste, si tu negocio encaja. A cambio, cuentas en tus redes que te ayudé.</p>
+					<div class="btn-row"><a class="btn btn--cta" href={WHATSAPP_URL}>Quiero mi landing gratis</a></div>
+				</div>
+				<div class="card card--hero">
+					<h3>2 · Por horas</h3>
+					<p class="price">desde 50 €/h <span class="muted" style="font-size:0.6em">+ IVA</span></p>
+					<p>Para cosas concretas: arreglar lo que no funciona, marketplaces, redes sociales, diseño, cambios puntuales.</p>
+					<p class="muted">No es lo más barato del mercado — y te explicaré por qué cada hora se paga sola con resultados.</p>
+				</div>
+				<div class="card">
+					<h3>3 · Proyecto completo</h3>
+					<p class="price">desde 2.000 € <span class="muted" style="font-size:0.6em">+ IVA</span></p>
+					<p>Tu web o tienda online lista para vender, de principio a fin.</p>
+					<p><strong>Puedes pagarlo en dos veces:</strong> 50 % al empezar y 50 % al lanzar.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--sand">
+		<div class="narrow">
+			<p class="eyebrow">Después del lanzamiento</p>
+			<h2>Mantenimiento — desde 300 €/mes</h2>
+			<p>
+				Me ocupo de que todo siga funcionando: salud de la web, actualizaciones, soporte y un
+				mínimo de publicidad y posicionamiento. Tu tranquilidad, cada mes.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="narrow note">
+			<h2>Mi garantía</h2>
+			<p>
+				Trabajo por reputación, no por facturar de más.
+				<strong>Si no quedas satisfecho con el resultado, lo rehago o te devuelvo tu dinero.</strong>
+				Así de claro.
+			</p>
+		</div>
+	</section>
+
+	<section class="section section--green">
+		<div class="narrow center">
+			<h2>Tu primer paso es gratis</h2>
+			<p class="lead" style="color:#eafff3">
+				Diagnóstico gratis si tu web no vende. Landing gratis si tu negocio encaja. Sin compromiso.
+			</p>
+			<div class="btn-row" style="justify-content:center">
+				<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
+			</div>
+		</div>
+	</section>
+</Page>

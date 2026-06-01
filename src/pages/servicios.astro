@@ -1,0 +1,107 @@
+---
+import Page from "../layouts/Page.astro";
+import { WHATSAPP_URL } from "../consts";
+---
+
+<Page
+	title="Servicios · Víctor Kuminov"
+	description="Rescate de webs que no venden, tiendas online listas para vender, mantenimiento, IA, SEO y visibilidad en IA para negocios de Asturias."
+>
+	<section class="hero">
+		<div class="narrow">
+			<p class="eyebrow">Servicios</p>
+			<h1>Qué hago por tu negocio</h1>
+			<p class="lead">
+				No te vendo tecnología. Te vendo un negocio que funciona online y deja de
+				quitarte el sueño. Y te diré con sinceridad qué necesitas tú y qué no.
+			</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="grid grid-2">
+				<div class="card card--hero">
+					<h3>⭐ Rescate — tu web no vende, yo la pongo a funcionar</h3>
+					<p>
+						¿Pagaste por una web o una tienda y nunca llegó a vender? ¿Te la dejaron a medias?
+						Miro tu negocio, entiendo qué necesita de verdad y arreglo lo que está roto —
+						sin rehacerlo todo «por rehacer».
+					</p>
+					<p><strong>Empezamos con un diagnóstico gratis:</strong> te digo qué falla y qué haría yo. Sin compromiso.</p>
+					<div class="btn-row">
+						<a class="btn btn--cta" href={WHATSAPP_URL}>Pide tu diagnóstico gratis</a>
+					</div>
+				</div>
+				<div class="card card--hero">
+					<h3>⭐ Tienda online lista para vender</h3>
+					<p>
+						Tu tienda desde cero, pensada para vender, no para presumir. Me ocupo de todo:
+						diseño, productos, pagos (tarjeta, Bizum) y envíos (Correos, SEUR…).
+					</p>
+					<p>
+						Y para que factures en regla, configuro tu tienda con el IVA y la facturación
+						correctos (compatible con Verifactu) <strong>trabajando de la mano de tu gestor</strong>
+						— cada uno en lo suyo.
+					</p>
+				</div>
+				<div class="card card--hero">
+					<h3>⭐ Mantenimiento — me ocupo de que todo siga funcionando</h3>
+					<p>
+						Lanzar la web es el principio, no el final. Yo me quedo: cuido que funcione, la
+						actualizo, atiendo tus cambios y mantengo viva tu publicidad y tu posicionamiento.
+						Como tener tu propio equipo técnico, pero sin contratarlo.
+					</p>
+					<p class="price">desde 300 €/mes</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--sand">
+		<div class="container">
+			<h2>Y además</h2>
+			<div class="grid">
+				<div class="card">
+					<h3>IA para tu negocio</h3>
+					<p>Te ahorro tiempo y dinero automatizando lo aburrido y repetitivo, para que te dediques a lo que importa. Tú ves el resultado, yo pongo la tecnología.</p>
+				</div>
+				<div class="card">
+					<h3>SEO</h3>
+					<p>Que te encuentren en Google cuando alguien busca lo que tú vendes.</p>
+				</div>
+				<div class="card">
+					<h3>Visibilidad en IA</h3>
+					<p>Que ChatGPT y otras inteligencias artificiales recomienden tu negocio. Pocos lo hacen todavía — yo sí.</p>
+				</div>
+				<div class="card">
+					<h3>Llevar tu producto al mundo</h3>
+					<p>Lo hice con una artesanía tradicional que hoy se vende en medio planeta. Quiero hacer lo mismo con los productos de Asturias.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="narrow note">
+			<h2>Te hago una landing gratis</h2>
+			<p>
+				Si tu negocio encaja con lo que hago, te creo una página sencilla <strong>sin coste</strong>.
+				Tú solo pagas el dominio. Lo único que te pido a cambio es que cuentes en tus redes que te ayudé.
+			</p>
+			<div class="btn-row">
+				<a class="btn btn--cta" href={WHATSAPP_URL}>Quiero mi landing gratis</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--green">
+		<div class="narrow center">
+			<h2>¿No sabes por dónde empezar?</h2>
+			<p class="lead" style="color:#eafff3">Cuéntame tu caso y te lo digo claro.</p>
+			<div class="btn-row" style="justify-content:center">
+				<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
+			</div>
+		</div>
+	</section>
+</Page>

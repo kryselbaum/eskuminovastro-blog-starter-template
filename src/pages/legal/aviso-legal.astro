@@ -1,0 +1,29 @@
+---
+import Page from "../../layouts/Page.astro";
+import { CONTACT_EMAIL, CONTACT_CITY } from "../../consts";
+---
+
+<Page title="Aviso legal · Víctor Kuminov" description="Aviso legal de kuminov.es">
+	<section class="section">
+		<div class="narrow">
+			<h1>Aviso legal</h1>
+			<p class="muted">Borrador pendiente de revisión por gestor/abogado antes de su publicación definitiva.</p>
+			<p>
+				En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de
+				Comercio Electrónico (LSSI-CE), se informa de los datos del titular de este sitio web:
+			</p>
+			<ul>
+				<li><strong>Titular:</strong> Victor Kuminov</li>
+				<li><strong>NIF/NIE:</strong> Z0785899V</li>
+				<li><strong>Actividad:</strong> servicios profesionales de desarrollo web, comercio electrónico y marketing digital (trabajador autónomo)</li>
+				<li><strong>Localidad:</strong> {CONTACT_CITY}, España</li>
+				<li><strong>Correo electrónico:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></li>
+				<li><strong>Sitio web:</strong> www.kuminov.es</li>
+			</ul>
+			<p>
+				El titular no se responsabiliza del mal uso de los contenidos de esta web, cuya
+				responsabilidad recae sobre la persona que los consulte o utilice.
+			</p>
+		</div>
+	</section>
+</Page>

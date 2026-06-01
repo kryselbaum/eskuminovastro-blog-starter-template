@@ -1,49 +1,200 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Page from "../layouts/Page.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, WHATSAPP_URL } from "../consts";
 ---
 
-<!doctype html>
-<html lang="es">
-	<head>
-		<BaseHead title="Asturias Digital - Tradición y Futuro" description="Portal para la digitalización de artesanos y turismo en Asturias" />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🌿 Asturias: Tradición, Sabor y Futuro Digital</h1>
-			<p>
-				Vivo y trabajo en <strong>Asturias</strong>, y estoy convencido de que nuestra tierra es un tesoro que merece ser descubierto por todo el mundo. Mi misión es unir la esencia de lo rural con las posibilidades del mundo digital.
-			</p>
-
-			<p>
-				Este proyecto nace para dar voz a quienes hacen grande nuestra región: los <strong>maestros queseros, los llagareros, los artesanos y los dueños de alojamientos rurales</strong>. Queremos que el producto asturiano no tenga fronteras.
-			</p>
-
-			<section>
-				<h2>¿Eres un productor o tienes un negocio en Asturias?</h2>
-				<p>
-					Te ayudo a llevar tu negocio al siguiente nivel. Estamos creando el <strong>catálogo digital más completo de Asturias</strong>, donde los viajeros podrán encontrar lo más auténtico de nuestra tierra.
+<Page title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<!-- 1 · Hero -->
+	<section class="hero">
+		<div class="container hero-grid">
+			<div>
+				<p class="eyebrow">Webs y tiendas online en Asturias</p>
+				<h1>Arreglo lo que otros no supieron hacer.</h1>
+				<p class="lead">
+					Reparo, creo y pongo a vender tiendas y webs para negocios de Asturias.
+					Si ya lo intentaste y no funcionó, eso es justo lo mío.
 				</p>
-				<ul>
-					<li><strong>Digitalización a medida:</strong> Creamos tu presencia online desde cero.</li>
-					<li><strong>Catálogo de Artesanos:</strong> Un espacio dedicado a la sidra, el queso y la artesanía local.</li>
-					<li><strong>Guía para el Turista:</strong> Recomendamos los rincones más especiales, esos que solo los que vivimos aquí conocemos.</li>
-				</ul>
-			</section>
-
-			<p>
-				<strong>¡Llevemos Asturias al mundo!</strong> Si quieres que tu negocio aparezca en nuestro catálogo o necesitas ayuda para digitalizar tus servicios, estoy aquí para guiarte en el proceso. 
-			</p>
-
-			<div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin-top: 2rem;">
-				<p style="margin-bottom: 0;">
-					🚀 <strong>¿Hablamos?</strong> Si eres un productor local o un viajero buscando consejos sobre Asturias, no dudes en contactarme. Os enseñaré todo lo que este Paraíso Natural tiene para ofrecer.
-				</p>
+				<div class="btn-row">
+					<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
+					<a class="btn btn--ghost" href="/servicios">Diagnóstico gratis</a>
+				</div>
 			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
+			<div class="video-placeholder">
+				🎥 Aquí irá el vídeo de bienvenida de Víctor
+			</div>
+		</div>
+	</section>
+
+	<!-- 2 · Confianza -->
+	<div class="trust container">
+		<span>20 años en digital</span>
+		<span>+100 proyectos</span>
+		<span>LG</span>
+		<span>Sisley</span>
+		<span>Autónomo en Avilés</span>
+	</div>
+
+	<!-- 3 · Para quién -->
+	<section class="section">
+		<div class="narrow">
+			<h2>¿Te suena?</h2>
+			<ul class="lead">
+				<li>Pagaste por una web y nunca llegó a vender.</li>
+				<li>Alguien empezó tu tienda online y la dejó a medias.</li>
+				<li>Lo intentaste por tu cuenta y se quedó a medio camino.</li>
+			</ul>
+			<p>
+				No es culpa tuya. La mayoría de las webs no venden porque se hicieron
+				pensando en la tecnología, y no en tu negocio.
+				<strong>Eso es exactamente lo que yo arreglo.</strong>
+			</p>
+		</div>
+	</section>
+
+	<!-- 4 · Cómo trabajo -->
+	<section class="section section--sand">
+		<div class="container">
+			<p class="eyebrow">Cómo trabajo</p>
+			<h2>Honestidad y resultados</h2>
+			<div class="grid">
+				<div class="card">
+					<h3>Te digo la verdad</h3>
+					<p>Si algo no te hace falta o no va a funcionar en tu caso, te lo digo. No te vendo humo.</p>
+				</div>
+				<div class="card">
+					<h3>Trabajo por reputación</h3>
+					<p>No por facturar de más. Si no quedas satisfecho, lo rehago o te devuelvo tu dinero.</p>
+				</div>
+				<div class="card">
+					<h3>La tecnología, a tu medida</h3>
+					<p>Adapto la tecnología a tu negocio, no tu negocio a la tecnología.</p>
+				</div>
+				<div class="card">
+					<h3>Equipo familiar</h3>
+					<p>Víctor y Nina. Detrás de cada proyecto hay personas, no una empresa sin cara.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 5 · Servicios -->
+	<section class="section">
+		<div class="container">
+			<h2>En qué te ayudo</h2>
+			<div class="grid">
+				<div class="card card--hero">
+					<h3>Rescate</h3>
+					<p>Tu web no vende; yo la pongo a funcionar.</p>
+				</div>
+				<div class="card card--hero">
+					<h3>Tienda online lista para vender</h3>
+					<p>Desde cero y sin complicaciones.</p>
+				</div>
+				<div class="card card--hero">
+					<h3>Mantenimiento</h3>
+					<p>Me ocupo de que todo siga funcionando.</p>
+				</div>
+			</div>
+			<p class="muted" style="margin-top:1rem">
+				Y además: IA para tu negocio · SEO · Visibilidad en IA.
+			</p>
+			<div class="btn-row">
+				<a class="btn btn--green" href="/servicios">Ver todos los servicios</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- 6 · Caso estrella -->
+	<section class="section section--sand">
+		<div class="narrow">
+			<p class="eyebrow">Caso real</p>
+			<h2>De un taller tradicional a vender en todo el mundo</h2>
+			<p>
+				Una fábrica histórica de artesanía llevaba medio año con una tienda online
+				que no funcionaba. La puse en marcha en menos de un mes. Hoy, más de diez años
+				después, vende desde Nueva Zelanda y Bali hasta Australia, América y toda Europa.
+			</p>
+			<div class="btn-row">
+				<a class="btn btn--green" href="/casos">Ver el caso</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- 7 · Misión -->
+	<section class="section section--green">
+		<div class="narrow center">
+			<h2>Mi misión</h2>
+			<p class="lead" style="color:#eafff3">
+				Quiero enseñarle Asturias al mundo: sus pueblos, su gente, sus productos.
+				Y llevar lo que aquí se hace tan bien a todas partes.
+			</p>
+		</div>
+	</section>
+
+	<!-- 8 · Oferta gancho -->
+	<section class="section">
+		<div class="narrow note">
+			<h2>Te hago una landing gratis</h2>
+			<p>
+				Si tu negocio encaja con lo que hago, te creo una página sencilla
+				<strong>sin coste</strong>. Tú solo pagas el dominio. Lo único que te pido a cambio
+				es que cuentes en tus redes que te ayudé.
+			</p>
+			<div class="btn-row">
+				<a class="btn btn--cta" href={WHATSAPP_URL}>Quiero mi landing gratis</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- 9 · Precios -->
+	<section class="section section--sand">
+		<div class="container">
+			<h2>Precios claros, sin sorpresas</h2>
+			<div class="grid">
+				<div class="card">
+					<h3>Gratis</h3>
+					<p class="price">0 €</p>
+					<p>Landing de promoción (solo pagas el dominio).</p>
+				</div>
+				<div class="card">
+					<h3>Por horas</h3>
+					<p class="price">desde 50 €/h</p>
+					<p>Arreglos, marketplaces, redes, diseño. + IVA.</p>
+				</div>
+				<div class="card">
+					<h3>Proyecto completo</h3>
+					<p class="price">desde 2.000 €</p>
+					<p>Tu web o tienda lista para vender. + IVA.</p>
+				</div>
+			</div>
+			<p class="muted" style="margin-top:1rem">➕ Mantenimiento desde 300 €/mes.</p>
+			<div class="btn-row">
+				<a class="btn btn--green" href="/precios">Ver precios</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- 10 · CTA final -->
+	<section class="section">
+		<div class="narrow center">
+			<h2>Hablemos</h2>
+			<p class="lead">Cuéntame tu caso. Te respondo en menos de 24 h.</p>
+			<div class="btn-row" style="justify-content:center">
+				<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
+				<a class="btn btn--ghost" href="/contacto">Formulario de contacto</a>
+			</div>
+		</div>
+	</section>
+</Page>
+
+<style>
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+		gap: 2.5rem;
+		align-items: center;
+	}
+	@media (max-width: 820px) {
+		.hero-grid { grid-template-columns: 1fr; }
+	}
+</style>

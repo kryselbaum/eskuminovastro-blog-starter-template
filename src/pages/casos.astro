@@ -1,0 +1,80 @@
+---
+import Page from "../layouts/Page.astro";
+import { WHATSAPP_URL } from "../consts";
+---
+
+<Page
+	title="Casos · Víctor Kuminov"
+	description="Resultados reales: de un taller tradicional a vender en todo el mundo. Experiencia internacional con LG y Sisley."
+>
+	<section class="hero">
+		<div class="narrow">
+			<p class="eyebrow">Casos</p>
+			<h1>Resultados, no promesas</h1>
+			<p class="lead">Llevo más de 20 años haciendo que los negocios vendan online. Aquí tienes la mejor prueba.</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="narrow">
+			<p class="eyebrow">Caso estrella</p>
+			<h2>De un taller tradicional a vender en todo el mundo</h2>
+			<p>
+				Una fábrica histórica de artesanía llevaba <strong>medio año</strong> con una tienda
+				online encargada a otros. Habían invertido mucho dinero y… no vendía nada. Se habían
+				perdido en lo complicado y en objetivos que no llevaban a ninguna parte.
+			</p>
+			<p>
+				Yo vi lo que de verdad hacía falta. Les propuse un trato:
+				<strong>la pongo en marcha en menos de un mes y por una fracción de lo que habían
+				pagado. Si no funciona, no me pagas.</strong>
+			</p>
+			<p>
+				Funcionó desde el primer mes. Hoy, <strong>más de diez años después</strong>, siguen
+				conmigo — y sus ventas crecen cada año. Sus productos viajan desde Nueva Zelanda y Bali
+				hasta Australia, América y toda Europa.
+			</p>
+			<div class="note">
+				<p style="margin:0" class="muted">📷 Aquí irán fotos de las piezas y la tienda · 💬 testimonio del cliente (pendiente de recibir y traducir).</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--sand">
+		<div class="container center">
+			<h2>He trabajado con</h2>
+			<div class="trust" style="border:0; font-size:1.4rem">
+				<span>LG</span>
+				<span>Sisley</span>
+			</div>
+			<p class="muted">Experiencia internacional: desde tiendas de alto tráfico hasta formación de equipos para grandes marcas.</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="narrow">
+			<h2>Casos de Asturias</h2>
+			<p>
+				Estoy empezando a trabajar con negocios de aquí. <strong>Pronto</strong> verás en esta
+				página historias de productores, talleres y comercios asturianos.
+			</p>
+			<div class="btn-row">
+				<a class="btn btn--cta" href={WHATSAPP_URL}>Te hago una landing gratis</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--green">
+		<div class="narrow center">
+			<h2>Mi misión</h2>
+			<p class="lead" style="color:#eafff3">
+				Lo que hice con aquella artesanía quiero hacerlo con Asturias: llevar lo que aquí se hace
+				tan bien a todo el mundo, y enseñarle al mundo lo bonita que es esta tierra y lo buena
+				que es su gente.
+			</p>
+			<div class="btn-row" style="justify-content:center">
+				<a class="btn btn--wa" href={WHATSAPP_URL}>Cuéntame tu caso</a>
+			</div>
+		</div>
+	</section>
+</Page>

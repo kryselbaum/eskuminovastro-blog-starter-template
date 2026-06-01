@@ -1,0 +1,123 @@
+---
+import Page from "../layouts/Page.astro";
+import { WHATSAPP_URL } from "../consts";
+---
+
+<Page
+	title="Sobre mí · Víctor Kuminov"
+	description="Hola, soy Víctor. 20 años en digital, equipo familiar con Nina, y una historia que me une a Asturias."
+>
+	<section class="hero">
+		<div class="container hero-grid">
+			<div>
+				<p class="eyebrow">Sobre mí</p>
+				<h1>Hola, soy Víctor</h1>
+				<p class="lead">
+					Empecé en esto casi sin querer. Buscaba a alguien que me hiciera una web como yo la
+					imaginaba, y ninguno la hacía bien. Así que decidí hacerla yo mismo. La vieron mis
+					amigos, me pidieron las suyas… y de eso hace ya más de 20 años.
+				</p>
+				<p>
+					Desde el instituto me apasionó la publicidad: mientras otros salían de fiesta, yo iba
+					a ferias y a los concursos de las grandes agencias (BBDO, Leo Burnett). Esa mezcla de
+					creatividad y negocio sigue siendo mi forma de trabajar.
+				</p>
+			</div>
+			<figure>
+				<img class="media-round" src="/img/victor.png" alt="Víctor Kuminov" width="520" />
+			</figure>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="grid grid-2">
+				<div class="card">
+					<h3>No trabajo solo</h3>
+					<p>
+						Detrás de cada proyecto estamos <strong>Nina y yo</strong>. Nina, mi mujer, es una
+						programadora excepcional: fue una de las primeras desarrolladoras de una de las
+						plataformas de comercio electrónico más importantes, y ve los sistemas completos —
+						dónde fallan y cómo arreglarlos. Somos un equipo familiar que responde por su trabajo.
+					</p>
+				</div>
+				<div class="card">
+					<h3>Cómo trabajo</h3>
+					<p>
+						Te digo la verdad, aunque no me convenga. Te diré dónde estás gastando de más, qué no
+						va a funcionar en tu caso, cuándo merece la pena invertir en redes y cuándo no.
+					</p>
+					<p><strong>Trabajo por reputación, no por facturar de más.</strong> Si no quedas satisfecho, lo rehago o te devuelvo tu dinero.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--sand">
+		<div class="narrow">
+			<h2>Mi experiencia</h2>
+			<ul class="lead">
+				<li>20 años en digital.</li>
+				<li>Más de 100 proyectos.</li>
+				<li>Marcas internacionales como <strong>LG</strong> y <strong>Sisley</strong>.</li>
+				<li><strong>Partner Platino</strong> de una plataforma líder de comercio electrónico.</li>
+				<li>Un cliente que sigue conmigo después de más de 10 años.</li>
+			</ul>
+			<p><strong>Idiomas:</strong> te atiendo en español e inglés (por escrito) y en alemán a través de mi equipo.</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="narrow">
+			<p class="eyebrow">Mi historia</p>
+			<h2>Lo que me une a Asturias</h2>
+			<p>
+				El mejor amigo de mi abuela fue uno de aquellos niños asturianos a los que la guerra
+				llevó muy lejos de casa, hasta Rusia. Ella le tuvo cariño toda su vida. Y, sin entrar en
+				política, la vida me trajo a mí —su nieto— hasta Asturias. Como un círculo que se cierra.
+			</p>
+			<p>
+				Llegué casi por casualidad. Viví medio año en Barcelona y no terminaba de encontrarme:
+				demasiado calor, demasiada gente, poca naturaleza. En el hotel me hablaron de Asturias y
+				vine a conocerla. Bajé del avión, cogí el autobús, vi el paisaje… y me enamoré a primera
+				vista. Al día siguiente ya estaba buscando piso para quedarme para siempre. Encontré uno
+				que me gustó y lo compré ese mismo día, sin mirar ningún otro.
+			</p>
+			<p>
+				Asturias me devuelve algo de la infancia: los olores, las vistas, la calma. Por eso quiero
+				que el mundo la conozca — y que conozca a su gente y lo que sabe hacer.
+			</p>
+			<p>
+				Hace poco conocí a <strong>Consuelo Argüelles</strong>, autora de <em>«Mi odisea en la URSS»</em>,
+				una de aquellas niñas de la guerra. Aquella historia que me contaba mi abuela, de repente,
+				tenía cara y nombre. A veces la vida cierra los círculos de la forma más inesperada.
+			</p>
+			<figure>
+				<img class="media-round" src="/img/victor-consuelo.jpeg" alt="Víctor con Consuelo Argüelles, autora de «Mi odisea en la URSS»" width="560" />
+				<figcaption>Con Consuelo Argüelles, autora de «Mi odisea en la URSS».</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<section class="section section--green">
+		<div class="narrow center">
+			<h2>¿Hablamos?</h2>
+			<div class="btn-row" style="justify-content:center">
+				<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
+				<a class="btn btn--ghost" href="/servicios">Ver servicios</a>
+			</div>
+		</div>
+	</section>
+</Page>
+
+<style>
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1.3fr 1fr;
+		gap: 2.5rem;
+		align-items: center;
+	}
+	@media (max-width: 820px) {
+		.hero-grid { grid-template-columns: 1fr; }
+	}
+</style>

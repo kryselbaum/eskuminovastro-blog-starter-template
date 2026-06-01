@@ -1,0 +1,37 @@
+---
+import Page from "../../layouts/Page.astro";
+import { CONTACT_EMAIL } from "../../consts";
+---
+
+<Page title="Política de privacidad · Víctor Kuminov" description="Política de privacidad de kuminov.es">
+	<section class="section">
+		<div class="narrow">
+			<h1>Política de privacidad</h1>
+			<p class="muted">Borrador pendiente de revisión por gestor/abogado antes de su publicación definitiva.</p>
+
+			<p><strong>Responsable:</strong> Victor Kuminov (NIE Z0785899V) · <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+
+			<h3>¿Qué datos recojo?</h3>
+			<p>Los que tú me facilitas a través del formulario de contacto o por WhatsApp/email: nombre, datos de contacto e información sobre tu negocio.</p>
+
+			<h3>¿Para qué?</h3>
+			<p>Únicamente para responderte y, en su caso, prestarte mis servicios. No los uso para nada más.</p>
+
+			<h3>Base legal</h3>
+			<p>Tu consentimiento al escribirme o enviar el formulario.</p>
+
+			<h3>¿Cuánto tiempo?</h3>
+			<p>El tiempo necesario para atender tu solicitud y nuestra relación profesional.</p>
+
+			<h3>¿Comparto tus datos?</h3>
+			<p>No vendo ni cedo tus datos a terceros. Solo se usan los proveedores técnicos necesarios para que la web funcione.</p>
+
+			<h3>Tus derechos</h3>
+			<p>
+				Puedes acceder, rectificar o suprimir tus datos, así como ejercer los demás derechos del
+				RGPD, escribiendo a <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. También puedes
+				reclamar ante la AEPD (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).
+			</p>
+		</div>
+	</section>
+</Page>
