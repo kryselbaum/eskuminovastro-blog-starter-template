@@ -366,7 +366,7 @@ export const services: Service[] = [
 		faq: [
 			{
 				q: "¿Y si la auditoría dice que hay que empezar de cero?",
-				a: "Te lo diré tal cual, con el porqué y lo que costaría. A veces sale más barato rehacer que remendar, y otras veces basta con arreglar tres cosas.",
+				a: "Te lo diré tal cual, con el porqué y lo que costaría. A veces cuesta menos rehacer que remendar, y otras veces basta con arreglar tres cosas.",
 			},
 			{
 				q: "Mi web la hizo otra persona. ¿Puedes trabajar sobre ella?",

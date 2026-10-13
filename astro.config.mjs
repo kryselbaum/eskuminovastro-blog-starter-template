@@ -8,6 +8,9 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://kuminov.es",
+	// /landings se sirve directamente desde landings.html, sin redirección a /landings/
+	build: { format: "file" },
+	trailingSlash: "never",
 	integrations: [mdx(), sitemap()],
 	adapter: cloudflare({
 		platformProxy: {
