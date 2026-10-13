@@ -290,7 +290,7 @@ export const services: Service[] = [
 		blocks: [
 			{
 				title: "¿Seguro que necesitas una app?",
-				text: "Te lo diré en la primera llamada. Si tu caso se resuelve con una web, te lo digo y te ahorro miles de euros. Solo construyo apps que tienen sentido.",
+				text: "Te lo diré en mi primera respuesta. Si tu caso se resuelve con una web, te lo digo y te ahorro miles de euros. Solo construyo apps que tienen sentido.",
 			},
 			{
 				title: "Por qué este precio",
@@ -337,7 +337,7 @@ export const services: Service[] = [
 		steps: [
 			{
 				title: "Auditoría estratégica",
-				text: "Analizo técnica, diseño y conversión. Recibes un informe claro y una videollamada de 60 minutos.",
+				text: "Analizo técnica, diseño y conversión. Recibes un informe claro por escrito y resuelvo tus dudas por mensaje.",
 			},
 			{
 				title: "Plan con prioridades",
@@ -481,7 +481,7 @@ export const services: Service[] = [
 		faq: [
 			{
 				q: "¿Puedo verlo funcionando antes?",
-				a: "Sí. Tengo una demo de un café: te la enseño en una videollamada o te paso el enlace por WhatsApp.",
+				a: "Sí. Tengo una demo de un café: te paso el enlace por WhatsApp o por email.",
 			},
 			{
 				q: "¿Quién cambia los precios y los platos del día?",
@@ -656,7 +656,7 @@ export const extras = [
 	},
 	{
 		title: "Auditoría estratégica",
-		text: "Técnica, diseño y conversión de tu web, tienda o app. Informe y videollamada de 60 minutos. 290 €, se descuentan del proyecto.",
+		text: "Técnica, diseño y conversión de tu web, tienda o app. Informe claro por escrito. 290 €, se descuentan del proyecto.",
 	},
 	{
 		title: "Trabajos puntuales",
