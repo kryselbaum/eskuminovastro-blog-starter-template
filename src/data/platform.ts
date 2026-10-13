@@ -151,7 +151,7 @@ export const platform: FeatureGroup[] = [
 			},
 			{
 				title: "Pago, propinas y reservas",
-				text: "Pago desde el móvil, propinas, reserva de mesa y conexión con el sistema de caja.",
+				text: "Pago desde el móvil, propinas, reserva de mesa y conexión con tu TPV.",
 				status: "dev",
 			},
 		],
@@ -227,7 +227,7 @@ export const platform: FeatureGroup[] = [
 	},
 	{
 		title: "Lo que viene",
-		text: "En desarrollo. Te lo cuento solo cuando esté probado con un cliente real.",
+		text: "En desarrollo. Lo doy por terminado solo cuando está probado con un cliente real.",
 		status: "dev",
 		items: [
 			{

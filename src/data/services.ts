@@ -78,8 +78,8 @@ export const services: Service[] = [
 				text: "Google penaliza las webs lentas y la gente se va antes de que terminen de cargar. Mis páginas se preparan antes de que nadie las pida y el servidor las entrega ya hechas. Por eso se abren al instante, incluso con mala cobertura.",
 			},
 			{
-				title: "Cada pantalla tiene un trabajo",
-				text: "Nada de decoración vacía. Primero decidimos qué tiene que hacer el visitante en cada bloque, luego lo diseño. El resultado se ve caro porque está ordenado, no porque lleve efectos.",
+				title: "Cada pantalla tiene una misión",
+				text: "Nada de decoración vacía. Primero decidimos qué tiene que hacer el visitante en cada bloque, luego lo diseño. El resultado parece caro porque está ordenado, no porque lleve efectos.",
 			},
 		],
 		pricing: {
@@ -120,7 +120,7 @@ export const services: Service[] = [
 		forWhom: [
 			"Marcas y productores que venden directamente al cliente: alimentación, cosmética, moda, muebles, artesanía.",
 			"Tiendas que pagan cada mes por una plataforma y ven cómo sube la cuota.",
-			"Fabricantes que venden a medida y quieren que el cliente calcule el precio solo.",
+			"Fabricantes que venden a medida y quieren que el cliente calcule el precio por su cuenta.",
 			"Negocios con catálogos de cientos o miles de productos.",
 		],
 		blocks: [
@@ -142,7 +142,7 @@ export const services: Service[] = [
 			},
 			{
 				title: "Para productos a medida",
-				text: "Si vendes a medida, el cliente calcula el precio solo: medidas, colores, acabados, herrajes. Para un fabricante de puertas lo montamos con 4.185 combinaciones, y cada pedido llega con la especificación completa.",
+				text: "Si vendes a medida, el propio cliente calcula el precio: medidas, colores, acabados, herrajes. Para un fabricante de puertas lo montamos con 4.185 combinaciones, y cada pedido llega con la especificación completa.",
 			},
 		],
 		includes: [
@@ -181,7 +181,7 @@ export const services: Service[] = [
 				a: "No. Mantengo las direcciones de las páginas o pongo redirecciones desde las antiguas, y conservo tu analítica. El posicionamiento se muda con la tienda.",
 			},
 			{
-				q: "¿Qué no tiene que sí tienen las grandes plataformas?",
+				q: "¿Qué tienen las grandes plataformas que esta tienda no tenga?",
 				a: "Las grandes plataformas traen más funciones de almacén y aplicaciones listas para instalar. Yo añado lo que tu tienda necesita y no cargo lo que sobra. A cambio no hay cuota mensual y la tienda es tuya.",
 			},
 			{
@@ -195,7 +195,7 @@ export const services: Service[] = [
 		slug: "cambio-de-plataforma",
 		group: "build",
 		name: "De alquiler a tienda propia",
-		short: "Mudo tu tienda de una plataforma de pago mensual a una propia, sin perder ventas ni Google.",
+		short: "Mudo tu tienda de una plataforma de pago mensual a una propia, sin perder ventas ni posiciones en Google.",
 		price: "presupuesto cerrado",
 		metaTitle: "Cambia tu tienda de alquiler por una propia · Víctor Kuminov",
 		metaDescription:
@@ -294,7 +294,7 @@ export const services: Service[] = [
 			},
 			{
 				title: "Por qué este precio",
-				text: "Una app nativa doble, con iOS y Android por separado, cuesta 30.000 € o más en una agencia. Yo trabajo con una sola base de código: el mismo resultado para tus clientes, la mitad de trabajo y un precio de entrada honesto.",
+				text: "Dos apps nativas, una para iOS y otra para Android, cuestan 30.000 € o más en una agencia. Yo trabajo con una sola base de código: el mismo resultado para tus clientes, la mitad de trabajo y un precio de entrada honesto.",
 			},
 		],
 		pricing: {
@@ -312,7 +312,7 @@ export const services: Service[] = [
 			},
 			{
 				q: "¿Quién la publica en las tiendas?",
-				a: "Yo. Preparo fichas, capturas y revisión de Apple y Google. La cuenta de desarrollador va a tu nombre, la app es tuya.",
+				a: "Yo. Preparo fichas y capturas y me ocupo de la revisión de Apple y Google. La cuenta de desarrollador va a tu nombre, la app es tuya.",
 			},
 		],
 		related: ["tiendas-online", "ia", "mantenimiento"],
@@ -332,7 +332,7 @@ export const services: Service[] = [
 			"Pagaste por una web y nunca llegó a vender.",
 			"Alguien empezó tu tienda online y la dejó a medias.",
 			"Lo intentaste por tu cuenta y se quedó a medio camino.",
-			"Nadie quiere tocar tu web porque «está muy liada».",
+			"Nadie quiere tocar tu web porque «es un lío».",
 		],
 		steps: [
 			{
@@ -348,7 +348,7 @@ export const services: Service[] = [
 				text: "Arreglo lo que está roto sin rehacerlo todo por rehacer.",
 			},
 			{
-				title: "Medir",
+				title: "Medición",
 				text: "Comprobamos con datos que funciona. Si no quedas satisfecho, lo rehago o te devuelvo el dinero.",
 			},
 		],
@@ -467,7 +467,7 @@ export const services: Service[] = [
 			},
 			{
 				title: "Pago, propinas y reservas",
-				text: "Pago desde el móvil, propinas, reserva de mesa y conexión con tu sistema de caja.",
+				text: "Pago desde el móvil, propinas, reserva de mesa y conexión con tu TPV.",
 				badge: "dev",
 			},
 		],
@@ -519,7 +519,7 @@ export const services: Service[] = [
 		],
 		proof: {
 			title: "40+ países",
-			text: "Una fábrica histórica de artesanía vende con mi tienda desde hace más de diez años. Sus piezas viajan de Nueva Zelanda y Bali a Australia, América y toda Europa.",
+			text: "Una fábrica histórica de artesanía vende con mi tienda desde hace más de diez años. Sus piezas viajan a Nueva Zelanda, Bali, Australia, América y toda Europa.",
 		},
 		pricing: {
 			price: "desde 7.500 €",
@@ -531,7 +531,7 @@ export const services: Service[] = [
 		faq: [
 			{
 				q: "¿Por qué país empiezo?",
-				a: "Por donde ya tienes señales: turistas que te compran, pedidos por correo, seguidores en redes. Lo vemos juntos con datos.",
+				a: "Por donde ya ves interés: turistas que te compran, pedidos por correo, seguidores en redes. Lo vemos juntos con datos.",
 			},
 			{
 				q: "¿Puedo empezar solo con una web en inglés?",
@@ -582,7 +582,7 @@ export const services: Service[] = [
 		faq: [
 			{
 				q: "¿En cuánto tiempo se notan los resultados?",
-				a: "Lo técnico se nota en semanas. El contenido y la posición, en meses. Te paso un informe mensual con datos, no con promesas.",
+				a: "Lo técnico se nota en semanas. El contenido y el posicionamiento, en meses. Te paso un informe mensual con datos, no con promesas.",
 			},
 			{
 				q: "¿De verdad la IA recomienda negocios?",
@@ -595,7 +595,7 @@ export const services: Service[] = [
 		slug: "mantenimiento",
 		group: "grow",
 		name: "Mantenimiento y soporte",
-		short: "Tu web vigilada cada día, siempre al día y con alguien que responde. Tu equipo técnico, sin contratarlo.",
+		short: "Tu web vigilada a diario, siempre actualizada y con alguien que responde. Tu equipo técnico, sin contratarlo.",
 		price: "desde 490 €/mes",
 		metaTitle: "Mantenimiento web y soporte mensual · Víctor Kuminov",
 		metaDescription:
@@ -613,7 +613,7 @@ export const services: Service[] = [
 			},
 			{
 				title: "Seguridad y actualizaciones",
-				text: "Mantengo la web al día y aplico las mejoras de seguridad. Tú no tienes que pensar en ello.",
+				text: "Mantengo la web al día y aplico los parches de seguridad. Tú no tienes que pensar en ello.",
 			},
 		],
 		pricing: {
@@ -632,7 +632,7 @@ export const services: Service[] = [
 			},
 			{
 				q: "¿Hay permanencia?",
-				a: "No. Mes a mes. Me quedo porque el trabajo sirve, no por contrato.",
+				a: "No. Mes a mes. Si sigues conmigo, es porque el trabajo te sirve, no por un contrato.",
 			},
 		],
 		related: ["seo-visibilidad-ia", "rescate", "tiendas-online"],
