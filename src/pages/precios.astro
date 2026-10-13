@@ -1,80 +1,108 @@
 ---
 import Page from "../layouts/Page.astro";
-import { WHATSAPP_URL } from "../consts";
+import Faq from "../components/Faq.astro";
+import CtaBand from "../components/CtaBand.astro";
+
+const rows = [
+	{ name: "Auditoría estratégica", href: "/rescate", what: "Técnica, diseño y conversión de tu web, tienda o app. Informe y videollamada de 60 min.", price: "450 €", time: "3-5 días", note: "Se descuenta entera si me encargas el proyecto" },
+	{ name: "Landing ultrarrápida", href: "/landings", what: "Página de venta a medida.", price: "desde 2.900 €", time: "2-3 semanas", note: "Típico: 2.900-6.000 €" },
+	{ name: "Web corporativa", href: "/landings", what: "Web de empresa de varias páginas.", price: "desde 4.900 €", time: "3-5 semanas", note: "Típico: 4.900-9.000 €" },
+	{ name: "Tienda online", href: "/tiendas-online", what: "Tienda ligera y rápida que te pertenece.", price: "desde 7.500 €", time: "4-8 semanas", note: "Típico: 7.500-18.000 €" },
+	{ name: "De alquiler a tienda propia", href: "/cambio-de-plataforma", what: "Mudanza de tu tienda sin perder posicionamiento.", price: "presupuesto cerrado", time: "según catálogo", note: "Tras la auditoría" },
+	{ name: "App iOS y Android", href: "/apps", what: "Primera app con una sola base de código.", price: "desde 3.000 €", time: "desde 4 semanas", note: "Típico: 3.000-12.000 €" },
+	{ name: "App con servidor e integraciones", href: "/apps", what: "Producto completo.", price: "a medida", time: "desde 2 meses", note: "Desde 12.000 €" },
+	{ name: "Rescate de proyectos", href: "/rescate", what: "Web o tienda que no vende o se quedó a medias.", price: "desde 2.500 €", time: "según caso", note: "Típico: 2.500-8.000 €" },
+	{ name: "IA para tu negocio", href: "/ia", what: "Consultoría e implantación: asistente, venta por chat, automatizaciones.", price: "75 €/h", time: "", note: "Implantación con presupuesto cerrado" },
+	{ name: "Carta QR y pedidos en mesa", href: "/hosteleria", what: "Para sidrerías, restaurantes y bares.", price: "a medida", time: "", note: "Demo disponible" },
+	{ name: "Trabajos puntuales", href: "/mantenimiento", what: "Arreglos y cambios concretos.", price: "90 €/h", time: "", note: "Bono desde 5 horas" },
+];
+
+const plans = [
+	{ name: "Care", price: "490 €", text: "Tu web siempre al día: actualizaciones, seguridad, copias, soporte prioritario y hasta 3 horas de cambios cada mes." },
+	{ name: "Growth", price: "950 €", text: "Todo lo de Care más mejora continua: experimentos de conversión, SEO técnico, contenidos y un informe mensual con datos, no con humo.", featured: true },
+	{ name: "Partner", price: "1.900 €", text: "Tu equipo digital externo: prioridad absoluta, bolsa de horas de desarrollo y estrategia trimestral." },
+];
+
+const faq = [
+	{ q: "¿Por qué no publicas un precio exacto?", a: "Porque dos tiendas nunca son iguales. Publico el punto de partida y la horquilla típica. El precio exacto te lo doy por escrito antes de empezar, y no cambia por el camino." },
+	{ q: "¿Cómo se paga?", a: "50% al empezar y 50% al lanzar. En proyectos de más de 10.000 €, por hitos: 40/40/20." },
+	{ q: "¿Qué pasa si no quedo satisfecho?", a: "Lo rehago o te devuelvo el dinero. Trabajo por reputación, no por facturar de más." },
+	{ q: "¿Hay costes mensuales obligatorios?", a: "Solo el dominio y el alojamiento, que en una web ligera cuestan poco. El mantenimiento es opcional y sin permanencia." },
+];
 ---
 
 <Page
 	title="Precios · Víctor Kuminov"
-	description="Tres precios claros, sin sorpresas: gratis, por horas desde 50 €/h y proyecto completo desde 2.000 €. Mantenimiento desde 300 €/mes. Garantía de satisfacción."
+	description="Precios claros de nivel senior: landing desde 2.900 €, tienda online desde 7.500 €, app desde 3.000 €, auditoría 450 €, mantenimiento desde 490 €/mes. Garantía real."
 >
-	<section class="hero">
-		<div class="narrow">
-			<p class="eyebrow">Precios</p>
-			<h1>Precios claros, sin sorpresas</h1>
-			<p class="lead">
-				Te digo lo que cuesta desde el principio. Y te digo también qué necesitas tú y qué no,
-				para que no gastes de más.
-			</p>
-		</div>
-	</section>
-
-	<section class="section">
+	<section class="hero hero--page">
 		<div class="container">
-			<div class="grid">
-				<div class="card">
-					<h3>1 · Gratis</h3>
-					<p class="price">0 €</p>
-					<p class="muted">solo pagas el dominio (~10-15 €/año)</p>
-					<p>Te hago una landing sencilla sin coste, si tu negocio encaja. A cambio, cuentas en tus redes que te ayudé.</p>
-					<div class="btn-row"><a class="btn btn--cta" href={WHATSAPP_URL}>Quiero mi landing gratis</a></div>
-				</div>
-				<div class="card card--hero">
-					<h3>2 · Por horas</h3>
-					<p class="price">desde 50 €/h <span class="muted" style="font-size:0.6em">+ IVA</span></p>
-					<p>Para cosas concretas: arreglar lo que no funciona, marketplaces, redes sociales, diseño, cambios puntuales.</p>
-					<p class="muted">No es lo más barato del mercado — y te explicaré por qué cada hora se paga sola con resultados.</p>
-				</div>
-				<div class="card">
-					<h3>3 · Proyecto completo</h3>
-					<p class="price">desde 2.000 € <span class="muted" style="font-size:0.6em">+ IVA</span></p>
-					<p>Tu web o tienda online lista para vender, de principio a fin.</p>
-					<p><strong>Puedes pagarlo en dos veces:</strong> 50 % al empezar y 50 % al lanzar.</p>
-				</div>
-			</div>
+			<p class="eyebrow">Precios</p>
+			<h1>Precios claros, nivel senior</h1>
+			<p class="lead">
+				No soy la opción más barata de España. Soy la que no tendrás que pagar dos veces. Sabes el
+				precio y el plazo antes de empezar, y no cambian por el camino.
+			</p>
 		</div>
 	</section>
 
-	<section class="section section--sand">
-		<div class="narrow">
-			<p class="eyebrow">Después del lanzamiento</p>
-			<h2>Mantenimiento — desde 300 €/mes</h2>
-			<p>
-				Me ocupo de que todo siga funcionando: salud de la web, actualizaciones, soporte y un
-				mínimo de publicidad y posicionamiento. Tu tranquilidad, cada mes.
+	<section class="section section--tight">
+		<div class="container">
+			<table class="ptable">
+				<thead>
+					<tr><th>Servicio</th><th>Precio</th><th>Plazo</th><th>Detalle</th></tr>
+				</thead>
+				<tbody>
+					{rows.map((r) => (
+						<tr>
+							<td><a href={r.href}>{r.name}</a><br /><span class="muted small">{r.what}</span></td>
+							<td class="p">{r.price.replace(/ (€)/g, " $1")}</td>
+							<td>{r.time}</td>
+							<td class="muted small">{r.note}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+			<p class="muted small" style="margin-top:1rem">Todos los precios + IVA.</p>
+		</div>
+	</section>
+
+	<section class="section section--alt">
+		<div class="container">
+			<div class="section-head">
+				<p class="eyebrow">Después del lanzamiento</p>
+				<h2>Mantenimiento mensual</h2>
+				<p>Sin permanencia. Me quedo porque el trabajo sirve, no por contrato.</p>
+			</div>
+			<div class="grid grid--3">
+				{plans.map((p) => (
+					<div class:list={["card", "plan", { "plan--featured": p.featured }]}>
+						{p.featured && <span class="badge">El más elegido</span>}
+						<h3>{p.name}</h3>
+						<p class="price">{p.price.replace(" €", " €")}<small>/mes</small></p>
+						<p>{p.text}</p>
+					</div>
+				))}
+			</div>
+			<p class="muted" style="margin-top:1.5rem">
+				Módulo de visibilidad en IA: 100-150 €/mes. <a href="/seo-visibilidad-ia">Qué es</a>
 			</p>
+		</div>
+	</section>
+
+	<section class="section section--dark">
+		<div class="container split">
+			<p class="eyebrow">Garantía</p>
+			<p class="callout">Si no quedas satisfecho con el resultado, lo rehago o te devuelvo tu dinero. Así de claro.</p>
 		</div>
 	</section>
 
 	<section class="section">
-		<div class="narrow note">
-			<h2>Mi garantía</h2>
-			<p>
-				Trabajo por reputación, no por facturar de más.
-				<strong>Si no quedas satisfecho con el resultado, lo rehago o te devuelvo tu dinero.</strong>
-				Así de claro.
-			</p>
+		<div class="container split">
+			<h2>Preguntas sobre el precio</h2>
+			<Faq items={faq} />
 		</div>
 	</section>
 
-	<section class="section section--green">
-		<div class="narrow center">
-			<h2>Tu primer paso es gratis</h2>
-			<p class="lead" style="color:#eafff3">
-				Diagnóstico gratis si tu web no vende. Landing gratis si tu negocio encaja. Sin compromiso.
-			</p>
-			<div class="btn-row" style="justify-content:center">
-				<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
-			</div>
-		</div>
-	</section>
+	<CtaBand />
 </Page>

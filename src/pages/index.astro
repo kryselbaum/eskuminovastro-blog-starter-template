@@ -1,200 +1,290 @@
 ---
+import { Image } from "astro:assets";
 import Page from "../layouts/Page.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import Faq from "../components/Faq.astro";
+import CtaBand from "../components/CtaBand.astro";
+import Arrow from "../components/Arrow.astro";
+import { services } from "../data/services";
 import { SITE_TITLE, SITE_DESCRIPTION, WHATSAPP_URL } from "../consts";
+import victor from "../assets/victor.png";
+
+const main = ["landings", "tiendas-online", "apps", "rescate"].map((s) => services.find((x) => x.slug === s)!);
+const more = services.filter((s) => !["landings", "tiendas-online", "apps", "rescate"].includes(s.slug));
+
+const faq = [
+	{
+		q: "¿Trabajas solo en Asturias?",
+		a: "No. El estudio está en Asturias, pero trabajo con clientes de toda España y de Europa. El proceso es 100% remoto, con videollamadas semanales y avances visibles desde la primera semana.",
+	},
+	{
+		q: "¿Por qué cuestas más que un freelancer?",
+		a: "Porque aquí no hay juniors aprendiendo con tu dinero. Estrategia, diseño y código los hacemos dos seniors con 20 años de experiencia, y el resultado no hay que rehacerlo al año siguiente.",
+	},
+	{
+		q: "¿Cuánto tarda?",
+		a: "Una landing, 2-3 semanas. Una tienda online, 4-8. Una app, desde 4 semanas para una primera versión. Te doy fecha cerrada antes de empezar, y la cumplo.",
+	},
+	{
+		q: "¿Cómo se paga?",
+		a: "50% al empezar y 50% al lanzar. En proyectos de más de 10.000 €, por hitos: 40/40/20.",
+	},
+	{
+		q: "¿Y si no me gusta el resultado?",
+		a: "Lo rehago o te devuelvo el dinero. Así de simple.",
+	},
+	{
+		q: "¿Podré gestionarlo yo mismo?",
+		a: "Sí. Te entrego formación en vídeo y 30 días de soporte incluidos. Y si prefieres olvidarte de lo técnico, tengo planes de mantenimiento desde 490 €/mes.",
+	},
+];
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
 ---
 
-<Page title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<!-- 1 · Hero -->
-	<section class="hero">
+<Page title={SITE_TITLE} description={SITE_DESCRIPTION} schema={[faqSchema]}>
+	<!-- Hero -->
+	<section class="hero home-hero">
 		<div class="container hero-grid">
 			<div>
-				<p class="eyebrow">Webs y tiendas online en Asturias</p>
-				<h1>Arreglo lo que otros no supieron hacer.</h1>
+				<p class="eyebrow">Estudio de diseño y desarrollo · Toda España</p>
+				<h1>Diseño y desarrollo de alto nivel para negocios que quieren vender más.</h1>
 				<p class="lead">
-					Reparo, creo y pongo a vender tiendas y webs para negocios de Asturias.
-					Si ya lo intentaste y no funcionó, eso es justo lo mío.
+					Landings que cargan en menos de un segundo, tiendas online sin fricción y apps para
+					iPhone y Android. Con la experiencia de haber trabajado para LG, Sisley y Toyota, y el
+					trato directo de un estudio de dos seniors.
 				</p>
 				<div class="btn-row">
-					<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
-					<a class="btn btn--ghost" href="/servicios">Diagnóstico gratis</a>
+					<a class="btn btn--primary" href="/contacto">Cuéntame tu proyecto <Arrow /></a>
+					<a class="btn btn--ghost" href="/precios">Ver servicios y precios</a>
 				</div>
 			</div>
-			<div class="video-placeholder">
-				🎥 Aquí irá el vídeo de bienvenida de Víctor
-			</div>
+			<figure class="hero-photo">
+				<Image src={victor} alt="Víctor Kuminov" widths={[360, 520, 720]} sizes="(min-width: 900px) 420px, 90vw" loading="eager" fetchpriority="high" class="portrait" />
+			</figure>
 		</div>
-	</section>
-
-	<!-- 2 · Confianza -->
-	<div class="trust container">
-		<span>20 años en digital</span>
-		<span>+100 proyectos</span>
-		<span>LG</span>
-		<span>Sisley</span>
-		<span>Autónomo en Avilés</span>
-	</div>
-
-	<!-- 3 · Para quién -->
-	<section class="section">
-		<div class="narrow">
-			<h2>¿Te suena?</h2>
-			<ul class="lead">
-				<li>Pagaste por una web y nunca llegó a vender.</li>
-				<li>Alguien empezó tu tienda online y la dejó a medias.</li>
-				<li>Lo intentaste por tu cuenta y se quedó a medio camino.</li>
+		<div class="container">
+			<ul class="proof">
+				<li><b>20+ años</b> en digital</li>
+				<li><b>+100</b> proyectos</li>
+				<li><b>LG · Sisley · Toyota</b></li>
+				<li>Partner Platino en e-commerce</li>
+				<li>Clientes que repiten <b>10+ años</b></li>
 			</ul>
-			<p>
-				No es culpa tuya. La mayoría de las webs no venden porque se hicieron
-				pensando en la tecnología, y no en tu negocio.
-				<strong>Eso es exactamente lo que yo arreglo.</strong>
-			</p>
 		</div>
 	</section>
 
-	<!-- 4 · Cómo trabajo -->
-	<section class="section section--sand">
+	<!-- Qué construyo -->
+	<section class="section section--alt">
 		<div class="container">
-			<p class="eyebrow">Cómo trabajo</p>
-			<h2>Honestidad y resultados</h2>
-			<div class="grid">
-				<div class="card">
-					<h3>Te digo la verdad</h3>
-					<p>Si algo no te hace falta o no va a funcionar en tu caso, te lo digo. No te vendo humo.</p>
-				</div>
-				<div class="card">
-					<h3>Trabajo por reputación</h3>
-					<p>No por facturar de más. Si no quedas satisfecho, lo rehago o te devuelvo tu dinero.</p>
-				</div>
-				<div class="card">
-					<h3>La tecnología, a tu medida</h3>
-					<p>Adapto la tecnología a tu negocio, no tu negocio a la tecnología.</p>
-				</div>
-				<div class="card">
-					<h3>Equipo familiar</h3>
-					<p>Víctor y Nina. Detrás de cada proyecto hay personas, no una empresa sin cara.</p>
-				</div>
+			<div class="section-head">
+				<p class="eyebrow">Servicios</p>
+				<h2>Qué construyo</h2>
+				<p>Cuatro productos con precio de partida claro. La cifra exacta, cerrada antes de empezar.</p>
+			</div>
+			<div class="grid grid--4">
+				{main.map((s, i) => <ServiceCard service={s} num={`0${i + 1}`} />)}
 			</div>
 		</div>
 	</section>
 
-	<!-- 5 · Servicios -->
+	<!-- Más servicios -->
 	<section class="section">
 		<div class="container">
-			<h2>En qué te ayudo</h2>
-			<div class="grid">
-				<div class="card card--hero">
-					<h3>Rescate</h3>
-					<p>Tu web no vende; yo la pongo a funcionar.</p>
-				</div>
-				<div class="card card--hero">
-					<h3>Tienda online lista para vender</h3>
-					<p>Desde cero y sin complicaciones.</p>
-				</div>
-				<div class="card card--hero">
-					<h3>Mantenimiento</h3>
-					<p>Me ocupo de que todo siga funcionando.</p>
-				</div>
+			<div class="section-head">
+				<h2>Y todo lo que hace falta alrededor</h2>
+				<p>Inteligencia artificial, hostelería, venta al extranjero, posicionamiento y mantenimiento.</p>
 			</div>
-			<p class="muted" style="margin-top:1rem">
-				Y además: IA para tu negocio · SEO · Visibilidad en IA.
-			</p>
-			<div class="btn-row">
-				<a class="btn btn--green" href="/servicios">Ver todos los servicios</a>
+			<div class="grid grid--3">
+				{more.map((s) => <ServiceCard service={s} />)}
+			</div>
+			<p style="margin-top:2rem"><a class="link-arrow" href="/plataforma">Todo lo que incluye cada tienda</a></p>
+		</div>
+	</section>
+
+	<!-- Por qué -->
+	<section class="section section--alt">
+		<div class="container split">
+			<div class="sticky">
+				<p class="eyebrow">Por qué funciona</p>
+				<h2>Por qué mis proyectos venden</h2>
+			</div>
+			<div class="reasons">
+				<div>
+					<h3>Velocidad medible</h3>
+					<p>Menos de un segundo de carga. Google lo premia, tus clientes lo notan y tus ventas lo agradecen. Compruébalo: abajo del todo, esta misma página te dice cuánto ha tardado.</p>
+				</div>
+				<div>
+					<h3>Diseño que convierte</h3>
+					<p>Cada pantalla tiene un objetivo. Nada de decoración vacía: diseño pensado para vender, no para presumir.</p>
+				</div>
+				<div>
+					<h3>Solo seniors</h3>
+					<p>Hablas directamente con quien diseña y programa tu proyecto. Sin comerciales, sin juniors, sin teléfono roto.</p>
+				</div>
+				<div>
+					<h3>Tu web es tuya</h3>
+					<p>Pagas una vez y el resultado te pertenece. Sin alquiler mensual de plataforma, sin extensiones que se rompen, sin sustos en la factura.</p>
+				</div>
+				<div>
+					<h3>Garantía real</h3>
+					<p>Si no quedas satisfecho, lo rehago o te devuelvo el dinero. Llevo 20 años viviendo de mi reputación.</p>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- 6 · Caso estrella -->
-	<section class="section section--sand">
-		<div class="narrow">
+	<!-- Caso -->
+	<section class="section section--dark">
+		<div class="container">
 			<p class="eyebrow">Caso real</p>
-			<h2>De un taller tradicional a vender en todo el mundo</h2>
-			<p>
-				Una fábrica histórica de artesanía llevaba medio año con una tienda online
-				que no funcionaba. La puse en marcha en menos de un mes. Hoy, más de diez años
-				después, vende desde Nueva Zelanda y Bali hasta Australia, América y toda Europa.
+			<h2 class="case-title">De un taller centenario a vender en más de 40 países</h2>
+			<p class="lead">
+				Una fábrica histórica de artesanía llevaba medio año con una tienda online que no vendía
+				nada. La relancé en menos de un mes. Más de diez años después sigue conmigo, y sus piezas
+				viajan de Nueva Zelanda a América.
 			</p>
+			<ul class="metrics">
+				<li><b>1 mes</b>de tienda muerta a vender</li>
+				<li><b>10+ años</b>sigue siendo cliente</li>
+				<li><b>40+</b>países con venta activa</li>
+			</ul>
 			<div class="btn-row">
-				<a class="btn btn--green" href="/casos">Ver el caso</a>
+				<a class="btn btn--ghost" href="/casos">Ver todos los casos <Arrow /></a>
 			</div>
 		</div>
 	</section>
 
-	<!-- 7 · Misión -->
-	<section class="section section--green">
-		<div class="narrow center">
-			<h2>Mi misión</h2>
-			<p class="lead" style="color:#eafff3">
-				Quiero enseñarle Asturias al mundo: sus pueblos, su gente, sus productos.
-				Y llevar lo que aquí se hace tan bien a todas partes.
-			</p>
-		</div>
-	</section>
-
-	<!-- 8 · Oferta gancho -->
+	<!-- Proceso -->
 	<section class="section">
-		<div class="narrow note">
-			<h2>Te hago una landing gratis</h2>
-			<p>
-				Si tu negocio encaja con lo que hago, te creo una página sencilla
-				<strong>sin coste</strong>. Tú solo pagas el dominio. Lo único que te pido a cambio
-				es que cuentes en tus redes que te ayudé.
-			</p>
-			<div class="btn-row">
-				<a class="btn btn--cta" href={WHATSAPP_URL}>Quiero mi landing gratis</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- 9 · Precios -->
-	<section class="section section--sand">
 		<div class="container">
-			<h2>Precios claros, sin sorpresas</h2>
-			<div class="grid">
-				<div class="card">
-					<h3>Gratis</h3>
-					<p class="price">0 €</p>
-					<p>Landing de promoción (solo pagas el dominio).</p>
-				</div>
-				<div class="card">
-					<h3>Por horas</h3>
-					<p class="price">desde 50 €/h</p>
-					<p>Arreglos, marketplaces, redes, diseño. + IVA.</p>
-				</div>
-				<div class="card">
-					<h3>Proyecto completo</h3>
-					<p class="price">desde 2.000 €</p>
-					<p>Tu web o tienda lista para vender. + IVA.</p>
-				</div>
+			<div class="section-head">
+				<p class="eyebrow">Proceso</p>
+				<h2>Cómo trabajamos</h2>
 			</div>
-			<p class="muted" style="margin-top:1rem">➕ Mantenimiento desde 300 €/mes.</p>
-			<div class="btn-row">
-				<a class="btn btn--green" href="/precios">Ver precios</a>
+			<ol class="steps">
+				<li><h3>Llamada y auditoría</h3><p>Entiendo tu negocio y te digo qué necesita de verdad, y qué no.</p></li>
+				<li><h3>Propuesta cerrada</h3><p>Precio y plazo fijos antes de empezar. No cambian por el camino.</p></li>
+				<li><h3>Diseño y desarrollo</h3><p>Avances cada semana. Ves tu proyecto crecer, no un informe.</p></li>
+				<li><h3>Lanzamiento y crecimiento</h3><p>Medimos, mejoramos y tu web empieza a trabajar para ti.</p></li>
+			</ol>
+		</div>
+	</section>
+
+	<!-- Estudio -->
+	<section class="section section--alt">
+		<div class="container split">
+			<div>
+				<p class="eyebrow">El estudio</p>
+				<h2>Víctor y Nina</h2>
+			</div>
+			<div>
+				<p class="lead">
+					Un estudio de dos seniors: 20 años en digital, marcas como LG, Sisley y Toyota, y una
+					programadora excepcional que ve los sistemas completos. Llevamos pocos proyectos a la
+					vez, y cada uno sale impecable, porque lleva nuestro nombre.
+				</p>
+				<a class="link-arrow" href="/sobre-mi">Conócenos</a>
 			</div>
 		</div>
 	</section>
 
-	<!-- 10 · CTA final -->
+	<!-- Precios resumen -->
 	<section class="section">
-		<div class="narrow center">
-			<h2>Hablemos</h2>
-			<p class="lead">Cuéntame tu caso. Te respondo en menos de 24 h.</p>
-			<div class="btn-row" style="justify-content:center">
-				<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
-				<a class="btn btn--ghost" href="/contacto">Formulario de contacto</a>
+		<div class="container">
+			<div class="section-head">
+				<p class="eyebrow">Precios</p>
+				<h2>Precios claros, nivel senior</h2>
+				<p>No soy la opción más barata de España. Soy la que no tendrás que pagar dos veces.</p>
+			</div>
+			<div class="grid grid--3">
+				<a class="card" href="/landings"><h3>Landing</h3><p class="price">desde 2.900&nbsp;€</p><p class="muted">2-3 semanas</p></a>
+				<a class="card" href="/tiendas-online"><h3>Tienda online</h3><p class="price">desde 7.500&nbsp;€</p><p class="muted">4-8 semanas</p></a>
+				<a class="card" href="/apps"><h3>App iOS y Android</h3><p class="price">desde 3.000&nbsp;€</p><p class="muted">desde 4 semanas</p></a>
+			</div>
+			<p class="muted" style="margin-top:1.5rem">Mantenimiento desde 490 €/mes. Todos los precios + IVA. <a href="/precios">Ver todos los precios</a></p>
+		</div>
+	</section>
+
+	<!-- Auditoría -->
+	<section class="section section--alt">
+		<div class="container split">
+			<div>
+				<p class="eyebrow">Auditoría estratégica · 450 €</p>
+				<h2>¿Ya tienes una web que no vende?</h2>
+			</div>
+			<div>
+				<p class="lead">
+					Analizo tu web, tu tienda o tu app: técnica, diseño y conversión. Recibes un informe
+					claro con lo que falla, lo que sobra y un plan con prioridades, explicado en una
+					videollamada de 60 minutos.
+				</p>
+				<p>Si después me encargas el proyecto, los 450 € se descuentan enteros.</p>
+				<div class="btn-row">
+					<a class="btn btn--primary" href="/rescate">Pedir mi auditoría <Arrow /></a>
+				</div>
 			</div>
 		</div>
 	</section>
+
+	<!-- FAQ -->
+	<section class="section">
+		<div class="container split">
+			<h2>Preguntas frecuentes</h2>
+			<Faq items={faq} />
+		</div>
+	</section>
+
+	<CtaBand />
 </Page>
 
 <style>
 	.hero-grid {
 		display: grid;
-		grid-template-columns: 1.2fr 1fr;
-		gap: 2.5rem;
-		align-items: center;
+		gap: var(--s5);
+		align-items: end;
 	}
-	@media (max-width: 820px) {
-		.hero-grid { grid-template-columns: 1fr; }
+	@media (min-width: 900px) {
+		.hero-grid {
+			grid-template-columns: 1fr 380px;
+			gap: var(--s6);
+		}
+	}
+	@media (min-width: 1200px) {
+		.hero-grid {
+			grid-template-columns: 1fr 420px;
+		}
+	}
+	.hero-photo .portrait {
+		aspect-ratio: 4 / 5;
+		max-width: 420px;
+	}
+	@media (max-width: 899px) {
+		.hero-photo .portrait {
+			max-width: 260px;
+		}
+	}
+	.reasons {
+		display: grid;
+		gap: var(--s4);
+	}
+	.reasons div {
+		border-top: 1px solid #d9d4ca;
+		padding-top: var(--s3);
+	}
+	.reasons h3 {
+		margin-bottom: 0.4rem;
+	}
+	.reasons p {
+		margin: 0;
+		max-width: 56ch;
+	}
+	.case-title {
+		font-size: clamp(2.4rem, 1.4rem + 4vw, 4.6rem);
+		max-width: 18ch;
 	}
 </style>

@@ -1,0 +1,187 @@
+---
+import Page from "../layouts/Page.astro";
+import Faq from "../components/Faq.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import CtaBand from "../components/CtaBand.astro";
+import Arrow from "../components/Arrow.astro";
+import { services, groups, bySlug, type Service } from "../data/services";
+import { ui } from "../data/ui";
+import { SITE_URL, SITE_NAME, WHATSAPP_URL } from "../consts";
+
+export function getStaticPaths() {
+	return services.map((s) => ({ params: { service: s.slug }, props: { s } }));
+}
+
+const { s } = Astro.props as { s: Service };
+const related = s.related.map(bySlug).filter(Boolean) as Service[];
+const nb = (t: string) => t.replace(/ (€)/g, " $1");
+const url = `${SITE_URL}/${s.slug}`;
+
+const schema = [
+	{
+		"@context": "https://schema.org",
+		"@type": "Service",
+		name: s.name,
+		description: s.metaDescription,
+		url,
+		provider: { "@type": "ProfessionalService", name: SITE_NAME, url: SITE_URL },
+		areaServed: ["ES", "EU"],
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: s.faq.map((f) => ({
+			"@type": "Question",
+			name: f.q,
+			acceptedAnswer: { "@type": "Answer", text: f.a },
+		})),
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: [
+			{ "@type": "ListItem", position: 1, name: ui.breadcrumbHome, item: SITE_URL },
+			{ "@type": "ListItem", position: 2, name: ui.allServices, item: `${SITE_URL}${ui.nav[0].href}` },
+			{ "@type": "ListItem", position: 3, name: s.name, item: url },
+		],
+	},
+];
+---
+
+<Page title={s.metaTitle} description={s.metaDescription} schema={schema}>
+	<section class="hero hero--page">
+		<div class="container">
+			<p class="eyebrow"><a href={ui.nav[0].href} class="crumb">{groups[s.group].title}</a></p>
+			{s.badge && <p><span class={`badge badge--${s.badge}`}>{ui.status[s.badge]}</span></p>}
+			<h1>{s.h1}</h1>
+			<p class="lead">{s.lead}</p>
+			<div class="btn-row">
+				<a class="btn btn--primary" href={ui.contactHref}>{ui.ctaTitle} <Arrow /></a>
+				<a class="btn btn--ghost" href={WHATSAPP_URL}>{ui.ctaPrimary}</a>
+			</div>
+			<p class="hero-price"><span class="price">{nb(s.pricing.price)}</span> <span class="muted small">{ui.plusVat}</span></p>
+		</div>
+	</section>
+
+	{s.forWhom && (
+		<section class="section section--tight">
+			<div class="container split">
+				<h2>{ui.forWhom}</h2>
+				<ul class="checks lead-list">{s.forWhom.map((f) => <li>{f}</li>)}</ul>
+			</div>
+		</section>
+	)}
+
+	{s.steps && (
+		<section class="section section--alt">
+			<div class="container">
+				<ol class="steps">
+					{s.steps.map((st) => (
+						<li>
+							<h3>{st.title}</h3>
+							<p>{st.text}</p>
+						</li>
+					))}
+				</ol>
+			</div>
+		</section>
+	)}
+
+	{s.blocks && (
+		<section class:list={["section", { "section--alt": !s.steps }]}>
+			<div class="container">
+				<div class="grid grid--2">
+					{s.blocks.map((b) => (
+						<div class="card card--plain">
+							{b.badge && <span class={`badge badge--${b.badge}`}>{ui.status[b.badge]}</span>}
+							<h3>{b.title}</h3>
+							<p>{b.text}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
+	{s.includes && (
+		<section class="section">
+			<div class="container split">
+				<h2>{ui.includes}</h2>
+				<ul class="checks checks--2">{s.includes.map((i) => <li>{i}</li>)}</ul>
+			</div>
+		</section>
+	)}
+
+	{s.proof && (
+		<section class="section section--dark">
+			<div class="container split">
+				<p class="eyebrow">{s.proof.title}</p>
+				<p class="callout">{s.proof.text}</p>
+			</div>
+		</section>
+	)}
+
+	<section class="section">
+		<div class="container split">
+			<div>
+				<p class="eyebrow">{ui.price}</p>
+				<p class="big-price">{nb(s.pricing.price)}</p>
+				<p class="muted small">{ui.plusVat}</p>
+			</div>
+			<div>
+				<ul class="checks">{s.pricing.notes.map((n) => <li>{n}</li>)}</ul>
+				<div class="btn-row">
+					<a class="btn btn--primary" href={ui.contactHref}>{ui.ctaTitle} <Arrow /></a>
+					<a class="btn btn--ghost" href={ui.pricingHref}>{ui.nav[2].label}</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt">
+		<div class="container split">
+			<h2>{ui.faq}</h2>
+			<Faq items={s.faq} />
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-head">
+				<h2>{ui.related}</h2>
+			</div>
+			<div class="grid grid--3">
+				{related.map((r) => <ServiceCard service={r} />)}
+			</div>
+			<p style="margin-top:2rem"><a class="link-arrow" href={ui.nav[0].href}>{ui.allServices}</a></p>
+		</div>
+	</section>
+
+	<CtaBand />
+</Page>
+
+<style>
+	.crumb {
+		color: inherit;
+		text-decoration: none;
+	}
+	.hero-price {
+		margin-top: var(--s4);
+		display: flex;
+		align-items: baseline;
+		gap: 0.6rem;
+	}
+	.big-price {
+		font-family: var(--font-display);
+		font-size: clamp(2.6rem, 1.6rem + 4vw, 4.4rem);
+		line-height: 1;
+		color: var(--ink);
+		margin: 0 0 0.4rem;
+		font-variant-numeric: tabular-nums;
+	}
+	.lead-list {
+		font-size: var(--fs-lead);
+		line-height: 1.45;
+		gap: 1rem;
+	}
+</style>

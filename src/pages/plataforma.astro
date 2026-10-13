@@ -1,0 +1,80 @@
+---
+import Page from "../layouts/Page.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { platform, platformIntro as p } from "../data/platform";
+import { ui } from "../data/ui";
+---
+
+<Page title={p.metaTitle} description={p.metaDescription}>
+	<section class="hero hero--page">
+		<div class="container">
+			<p class="eyebrow">{p.eyebrow}</p>
+			<h1>{p.h1}</h1>
+			<p class="lead">{p.lead}</p>
+			<p class="legend small">
+				<span class="badge">{ui.status.live}</span>
+				<span class="badge badge--demo">{ui.status.demo}</span>
+				<span class="badge badge--dev">{ui.status.dev}</span>
+			</p>
+		</div>
+	</section>
+
+	{platform.map((g, i) => (
+		<section class:list={["section", "section--tight", { "section--alt": i % 2 === 0 }]}>
+			<div class="container split">
+				<div class="sticky">
+					<span class={`badge ${g.status === "live" ? "" : "badge--" + g.status}`}>{ui.status[g.status]}</span>
+					<h2 class="g-title">{g.title}</h2>
+					<p class="muted">{g.text}</p>
+				</div>
+				<div class="features">
+					{g.items.map((f) => (
+						<div>
+							<h3>
+								{f.title}
+								{f.status && <span class={`badge badge--${f.status}`}>{ui.status[f.status]}</span>}
+							</h3>
+							<p>{f.text}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	))}
+
+	<CtaBand title="Elegimos lo que necesita tu tienda" text="De un escaparate sencillo a una tienda con venta en Telegram y asistente de IA. Te propongo solo lo que te vaya a servir." />
+</Page>
+
+<style>
+	.legend {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		margin-top: var(--s3);
+	}
+	.g-title {
+		margin-top: var(--s2);
+		font-size: clamp(1.8rem, 1.3rem + 2vw, 2.8rem);
+	}
+	.features {
+		display: grid;
+		gap: var(--s4);
+	}
+	@media (min-width: 700px) {
+		.features {
+			grid-template-columns: 1fr 1fr;
+			column-gap: var(--s4);
+		}
+	}
+	.features h3 {
+		font-size: 1.12rem;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.4rem;
+	}
+	.features p {
+		margin: 0;
+	}
+</style>

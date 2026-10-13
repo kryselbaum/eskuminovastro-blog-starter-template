@@ -1,96 +1,98 @@
 ---
 import Page from "../layouts/Page.astro";
-import { WHATSAPP_URL, WHATSAPP_PHONE, CONTACT_EMAIL, CONTACT_CITY } from "../consts";
+import Arrow from "../components/Arrow.astro";
+import { WHATSAPP_URL, WHATSAPP_PHONE, CONTACT_EMAIL, CONTACT_CITY, TELEGRAM_URL } from "../consts";
+
+const needs = ["Landing o web corporativa", "Tienda online", "Mudar mi tienda a una propia", "App iOS y Android", "Rescate de un proyecto", "IA para mi negocio", "Carta QR para hostelería", "SEO o mantenimiento", "Otra cosa"];
+const budgets = ["3.000-6.000 €", "6.000-15.000 €", "15.000-40.000 €", "Más de 40.000 €", "Aún no lo sé"];
 ---
 
 <Page
 	title="Contacto · Víctor Kuminov"
-	description="Cuéntame tu caso. Te respondo en menos de 24 h. WhatsApp, email y formulario."
+	description="Cuéntame tu proyecto. Te respondo en menos de 24 horas con una primera opinión sincera. WhatsApp, Telegram, email y formulario."
 >
-	<section class="hero">
-		<div class="narrow">
-			<p class="eyebrow">Contacto</p>
-			<h1>Hablemos</h1>
-			<p class="lead">Cuéntame tu caso, sin compromiso. Te respondo en menos de 24 h.</p>
-			<div class="btn-row">
-				<a class="btn btn--wa" href={WHATSAPP_URL}>Escríbeme por WhatsApp</a>
+	<section class="hero hero--page">
+		<div class="container split">
+			<div>
+				<p class="eyebrow">Contacto</p>
+				<h1>Cuéntame tu proyecto</h1>
+				<p class="lead">
+					Te respondo en menos de 24 horas con una primera opinión sincera: qué haría yo en tu
+					caso, y si de verdad te hace falta.
+				</p>
+				<div class="btn-row">
+					<a class="btn btn--primary" href={WHATSAPP_URL}>Escribir por WhatsApp <Arrow /></a>
+					<a class="btn btn--ghost" href={TELEGRAM_URL}>Telegram</a>
+				</div>
+				<dl class="contact-list">
+					<dt>WhatsApp</dt><dd><a href={WHATSAPP_URL}>{WHATSAPP_PHONE}</a></dd>
+					<dt>Email</dt><dd><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></dd>
+					<dt>Estudio</dt><dd>{CONTACT_CITY}, España. Trabajo en remoto con toda España y Europa.</dd>
+				</dl>
 			</div>
-			<p class="muted" style="margin-top:1rem">
-				📍 {CONTACT_CITY} · 📱 <a href={WHATSAPP_URL}>{WHATSAPP_PHONE}</a> · ✉️ <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-			</p>
-		</div>
-	</section>
 
-	<section class="section">
-		<div class="narrow">
 			<div class="card">
-				<h2>O déjame tus datos</h2>
-				<form id="contact-form">
-					<label>Nombre<input type="text" name="nombre" required /></label>
-					<label>Teléfono o email<input type="text" name="contacto" required /></label>
-					<label>¿Qué tipo de negocio tienes?<input type="text" name="negocio" /></label>
-					<label>¿Qué necesitas?<textarea name="mensaje" rows="4"></textarea></label>
+				<h2 class="form-title">O déjame tus datos</h2>
+				<form id="contact-form" class="form">
+					<div class="row">
+						<label>Nombre<input type="text" name="nombre" autocomplete="name" required /></label>
+						<label>Empresa <span class="opt">(opcional)</span><input type="text" name="empresa" autocomplete="organization" /></label>
+					</div>
+					<div class="row">
+						<label>Email<input type="email" name="email" autocomplete="email" required /></label>
+						<label>Teléfono <span class="opt">(opcional)</span><input type="tel" name="telefono" autocomplete="tel" /></label>
+					</div>
+					<label>¿Qué necesitas?
+						<select name="necesidad">{needs.map((n) => <option>{n}</option>)}</select>
+					</label>
+					<label>Presupuesto orientativo
+						<select name="presupuesto">{budgets.map((b) => <option>{b}</option>)}</select>
+					</label>
+					<label>Cuéntame tu proyecto<textarea name="mensaje" rows="5"></textarea></label>
 					<label class="check">
 						<input type="checkbox" name="rgpd" required />
-						<span>He leído y acepto la <a href="/legal/privacidad">Política de Privacidad</a>.</span>
+						<span>He leído y acepto la <a href="/legal/privacidad">política de privacidad</a>.</span>
 					</label>
-					<button class="btn btn--cta" type="submit">Enviar</button>
+					<button class="btn btn--primary" type="submit">Enviar: te respondo en 24 h <Arrow /></button>
+					<p class="muted small" style="margin:0">Se abrirá tu programa de correo con el mensaje preparado. Sin spam, sin compromiso.</p>
 				</form>
-				<p class="muted" style="margin-top:1rem">Te responderé personalmente. Sin spam, sin compromiso.</p>
 			</div>
-			<p class="muted center" style="margin-top:2rem">
-				🔜 Redes sociales próximamente.
-			</p>
 		</div>
 	</section>
 
 	<script is:inline define:vars={{ CONTACT_EMAIL }}>
-		const form = document.getElementById("contact-form");
-		form?.addEventListener("submit", (e) => {
+		document.getElementById("contact-form")?.addEventListener("submit", (e) => {
 			e.preventDefault();
 			const f = e.target;
-			const nombre = f.nombre.value.trim();
-			const contacto = f.contacto.value.trim();
-			const negocio = f.negocio.value.trim();
-			const mensaje = f.mensaje.value.trim();
+			const v = (n) => (f[n]?.value || "").trim();
 			const body =
-				`Nombre: ${nombre}\n` +
-				`Contacto: ${contacto}\n` +
-				`Negocio: ${negocio}\n\n` +
-				`${mensaje}`;
-			const subject = `Nuevo contacto desde kuminov.es — ${nombre}`;
-			window.location.href =
-				`mailto:${CONTACT_EMAIL}?subject=` +
-				encodeURIComponent(subject) +
-				`&body=` +
-				encodeURIComponent(body);
+				`Nombre: ${v("nombre")}\nEmpresa: ${v("empresa")}\nEmail: ${v("email")}\nTeléfono: ${v("telefono")}\n` +
+				`Necesito: ${v("necesidad")}\nPresupuesto: ${v("presupuesto")}\n\n${v("mensaje")}`;
+			const subject = `Proyecto desde kuminov.es: ${v("nombre")}`;
+			location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 		});
 	</script>
 </Page>
 
 <style>
-	form label {
-		display: block;
-		margin-bottom: 1rem;
-		font-weight: 700;
+	.contact-list {
+		margin: var(--s5) 0 0;
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		gap: 0.6rem 1.5rem;
 	}
-	form input[type="text"],
-	form textarea {
-		display: block;
-		width: 100%;
-		margin-top: 0.3rem;
-		padding: 0.7em;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 10px;
-		font-family: inherit;
-		font-weight: 400;
+	.contact-list dt {
+		font-size: 0.78rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--muted);
+		padding-top: 0.2rem;
 	}
-	.check {
-		display: flex;
-		gap: 0.6rem;
-		align-items: flex-start;
-		font-weight: 400;
-		font-size: 0.95rem;
+	.contact-list dd {
+		margin: 0;
 	}
-	.check input { margin-top: 0.4rem; }
+	.form-title {
+		font-size: 2rem;
+		margin-bottom: var(--s3);
+	}
 </style>

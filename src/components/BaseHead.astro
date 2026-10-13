@@ -1,82 +1,70 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import "../styles/global.css";
+import { LANG, SITE_URL, SITE_NAME, CONTACT_EMAIL, ALT_LANG, ALT_PATHS } from "../consts";
 
 interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	schema?: object[];
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-const { title, description, image = '/img/og.jpg' } = Astro.props;
-const imageURL = new URL(image, Astro.site);
+const { title, description, image = "/img/og.jpg", schema = [] } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+const canonicalURL = new URL(path, SITE_URL);
+const imageURL = new URL(image, SITE_URL);
+const altPath = ALT_PATHS[path];
+const altURL = altPath ? new URL(altPath, ALT_LANG.site).toString() : null;
+const locale = LANG === "es" ? "es_ES" : "en_GB";
 
 const orgSchema = {
 	"@context": "https://schema.org",
 	"@type": "ProfessionalService",
-	name: "Víctor Kuminov",
-	alternateName: "kuminov.es",
-	description:
-		"Desarrollo y reparación de webs y tiendas online para negocios de Asturias.",
-	url: "https://kuminov.es",
+	name: SITE_NAME,
+	url: SITE_URL,
 	image: imageURL.toString(),
-	email: "victor.kuminov@gmail.com",
+	email: CONTACT_EMAIL,
 	telephone: "+34637235634",
-	priceRange: "€€",
+	priceRange: "€€€",
 	address: {
 		"@type": "PostalAddress",
 		addressLocality: "Avilés",
 		addressRegion: "Asturias",
 		addressCountry: "ES",
 	},
-	areaServed: "Asturias, España",
-	knowsLanguage: ["es", "en"],
+	areaServed: ["ES", "EU"],
+	knowsLanguage: ["es", "en", "ru"],
 	founder: { "@type": "Person", name: "Víctor Kuminov" },
+	sameAs: [ALT_LANG.site],
 };
 ---
 
-<!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content="#faf9f7" />
+<link rel="preload" href="/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
 
-<!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
-
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
-
-<!-- Primary Meta Tags -->
 <title>{title}</title>
-<meta name="title" content={title} />
 <meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+<link rel="alternate" hreflang={LANG} href={canonicalURL} />
+{altURL && <link rel="alternate" hreflang={ALT_LANG.code} href={altURL} />}
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="Víctor Kuminov" />
-<meta property="og:locale" content="es_ES" />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:locale" content={locale} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={imageURL} />
-<meta property="og:image:secure_url" content={imageURL} />
-<meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Víctor Kuminov — webs y tiendas online en Asturias" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageURL} />
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={imageURL} />
-<meta property="twitter:image:alt" content="Víctor Kuminov — webs y tiendas online en Asturias" />
-
-<!-- Schema.org -->
 <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+{schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
