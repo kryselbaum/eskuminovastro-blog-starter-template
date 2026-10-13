@@ -4,27 +4,28 @@ import Faq from "../components/Faq.astro";
 import CtaBand from "../components/CtaBand.astro";
 
 const rows = [
-	{ name: "Auditoría estratégica", href: "/rescate", what: "Técnica, diseño y conversión de tu web, tienda o app. Informe y videollamada de 60 min.", price: "450 €", time: "3-5 días", note: "Se descuenta entera si me encargas el proyecto" },
-	{ name: "Landing ultrarrápida", href: "/landings", what: "Página de venta a medida.", price: "desde 2.900 €", time: "2-3 semanas", note: "Típico: 2.900-6.000 €" },
-	{ name: "Web corporativa", href: "/landings", what: "Web de empresa de varias páginas.", price: "desde 4.900 €", time: "3-5 semanas", note: "Típico: 4.900-9.000 €" },
-	{ name: "Tienda online", href: "/tiendas-online", what: "Tienda ligera y rápida que te pertenece.", price: "desde 7.500 €", time: "4-8 semanas", note: "Típico: 7.500-18.000 €" },
+	{ name: "Auditoría estratégica", href: "/rescate", what: "Técnica, diseño y conversión de tu web, tienda o app. Informe claro por escrito.", price: "290 €", time: "3-5 días", note: "Se descuenta entera si me encargas el proyecto" },
+	{ name: "Landing ultrarrápida", href: "/landings", what: "Página de venta a medida.", price: "desde 1.200 €", time: "2-3 semanas", note: "Típico: 1.200-2.500 €" },
+	{ name: "Web corporativa", href: "/landings", what: "Web de empresa de varias páginas.", price: "desde 2.400 €", time: "3-5 semanas", note: "Típico: 2.400-5.000 €" },
+	{ name: "Tienda online", href: "/tiendas-online", what: "Tienda ligera y rápida que te pertenece.", price: "desde 3.900 €", time: "4-8 semanas", note: "Típico: 3.900-9.000 €" },
 	{ name: "De alquiler a tienda propia", href: "/cambio-de-plataforma", what: "Mudanza de tu tienda sin perder posicionamiento.", price: "presupuesto cerrado", time: "según catálogo", note: "Tras la auditoría" },
 	{ name: "App iOS y Android", href: "/apps", what: "Primera app con una sola base de código.", price: "desde 3.000 €", time: "desde 4 semanas", note: "Típico: 3.000-12.000 €" },
 	{ name: "App con servidor e integraciones", href: "/apps", what: "Producto completo.", price: "a medida", time: "desde 2 meses", note: "Desde 12.000 €" },
-	{ name: "Rescate de proyectos", href: "/rescate", what: "Web o tienda que no vende o se quedó a medias.", price: "desde 2.500 €", time: "según caso", note: "Típico: 2.500-8.000 €" },
+	{ name: "Rescate de proyectos", href: "/rescate", what: "Web o tienda que no vende o se quedó a medias.", price: "desde 1.200 €", time: "según caso", note: "Típico: 1.200-4.000 €" },
 	{ name: "IA para tu negocio", href: "/ia", what: "Consultoría e implantación: asistente, venta por chat, automatizaciones.", price: "75 €/h", time: "", note: "Implantación con presupuesto cerrado" },
-	{ name: "Carta QR y pedidos en mesa", href: "/hosteleria", what: "Para sidrerías, restaurantes y bares.", price: "a medida", time: "", note: "Demo disponible" },
-	{ name: "Trabajos puntuales", href: "/mantenimiento", what: "Arreglos y cambios concretos.", price: "90 €/h", time: "", note: "Bono desde 5 horas" },
+	{ name: "Carta QR y pedidos en mesa", href: "/hosteleria", what: "Para sidrerías, restaurantes y bares.", price: "desde 490 €", time: "", note: "Más 29 €/mes. Demo disponible" },
+	{ name: "Trabajos puntuales", href: "/mantenimiento", what: "Arreglos y cambios concretos.", price: "60 €/h", time: "", note: "Bono desde 5 horas" },
 ];
 
 const plans = [
-	{ name: "Care", price: "490 €", text: "Tu web siempre al día: actualizaciones, seguridad, copias, soporte prioritario y hasta 3 horas de cambios cada mes." },
-	{ name: "Growth", price: "950 €", text: "Todo lo de Care más mejora continua: experimentos de conversión, SEO técnico, contenidos y un informe mensual con datos, no con humo.", featured: true },
-	{ name: "Partner", price: "1.900 €", text: "Tu equipo digital externo: prioridad absoluta, bolsa de horas de desarrollo y estrategia trimestral." },
+	{ name: "Care", price: "79 €", text: "Tu web siempre al día: vigilancia diaria, actualizaciones, seguridad, copias y soporte por escrito. Los cambios se cobran aparte." },
+	{ name: "Growth", price: "190 €", text: "Todo lo de Care más 2 horas de cambios al mes, SEO técnico y un informe mensual con datos, no con humo.", featured: true },
+	{ name: "Partner", price: "490 €", text: "Tu equipo digital externo: 6 horas de trabajo al mes, prioridad absoluta y estrategia trimestral." },
 ];
 
 const faq = [
 	{ q: "¿Por qué no publicas un precio exacto?", a: "Porque dos tiendas nunca son iguales. Publico el punto de partida y la horquilla típica. El precio exacto te lo doy por escrito antes de empezar, y no cambia por el camino." },
+	{ q: "¿Por qué estos precios, si eres senior?", a: "Porque en España empiezo de cero: mis casos son de otros países y aquí todavía no tengo reseñas. Prefiero ganármelas con proyectos reales que con publicidad. Por eso pido a cambio el caso y la reseña." },
 	{ q: "¿Cómo se paga?", a: "50% al empezar y 50% al lanzar. En proyectos de más de 10.000 €, por hitos: 40/40/20." },
 	{ q: "¿Qué pasa si no quedo satisfecho?", a: "Lo rehago o te devuelvo el dinero. Trabajo por reputación, no por facturar de más." },
 	{ q: "¿Hay costes mensuales obligatorios?", a: "Solo el dominio y el alojamiento, que en una web ligera cuestan poco. El mantenimiento es opcional y sin permanencia." },
@@ -33,7 +34,7 @@ const faq = [
 
 <Page
 	title="Precios · Víctor Kuminov"
-	description="Precios claros de nivel senior: landing desde 2.900 €, tienda online desde 7.500 €, app desde 3.000 €, auditoría 450 €, mantenimiento desde 490 €/mes. Garantía real."
+	description="Precios claros de nivel senior: landing desde 1.200 €, tienda online desde 3.900 €, app desde 3.000 €, auditoría 290 €, mantenimiento desde 79 €/mes. Garantía real."
 >
 	<section class="hero hero--page">
 		<div class="container">
@@ -64,6 +65,10 @@ const faq = [
 				</tbody>
 			</table>
 			<p class="muted small" style="margin-top:1rem">Todos los precios + IVA.</p>
+			<p class="launch">
+				<strong>Precios de lanzamiento en España.</strong> A cambio te pido dos cosas: permiso para
+				enseñar tu proyecto como caso y una reseña sincera al terminar.
+			</p>
 		</div>
 	</section>
 
@@ -106,3 +111,13 @@ const faq = [
 
 	<CtaBand />
 </Page>
+
+<style>
+	.launch {
+		margin-top: var(--s3);
+		padding: var(--s3);
+		border-left: 3px solid var(--green);
+		background: var(--green-soft);
+		max-width: 46rem;
+	}
+</style>

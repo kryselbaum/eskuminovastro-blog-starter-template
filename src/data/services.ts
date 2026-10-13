@@ -50,10 +50,10 @@ export const services: Service[] = [
 		group: "build",
 		name: "Landings ultrarrápidas",
 		short: "Páginas de venta a medida que cargan en menos de un segundo y convierten visitas en clientes.",
-		price: "desde 2.900 €",
+		price: "desde 1.200 €",
 		metaTitle: "Landings ultrarrápidas que convierten · Víctor Kuminov",
 		metaDescription:
-			"Páginas de venta y webs corporativas a medida: diseño propio, carga en menos de un segundo y entrega en 2-3 semanas. Desde 2.900 € + IVA.",
+			"Páginas de venta y webs corporativas a medida: diseño propio, carga en menos de un segundo y entrega en 2-3 semanas. Desde 1.200 € + IVA.",
 		h1: "Landings ultrarrápidas que convierten",
 		lead: "Páginas de venta a medida, con diseño propio y un único objetivo: que la visita se convierta en cliente. Cargan en menos de un segundo, y eso lo puedes medir tú mismo.",
 		forWhom: [
@@ -83,10 +83,10 @@ export const services: Service[] = [
 			},
 		],
 		pricing: {
-			price: "desde 2.900 €",
+			price: "desde 1.200 €",
 			notes: [
-				"Landing: 2.900-6.000 €, entrega en 2-3 semanas.",
-				"Web corporativa de varias páginas: desde 4.900 €, 3-5 semanas.",
+				"Landing: 1.200-2.500 €, entrega en 2-3 semanas.",
+				"Web corporativa de varias páginas: desde 2.400 €, 3-5 semanas.",
 				"Precio y plazo cerrados antes de empezar.",
 			],
 		},
@@ -111,10 +111,10 @@ export const services: Service[] = [
 		group: "build",
 		name: "Tiendas online ligeras",
 		short: "Un e-commerce rápido, fácil de gestionar y que te pertenece: pagas una vez, sin alquiler mensual.",
-		price: "desde 7.500 €",
+		price: "desde 3.900 €",
 		metaTitle: "Tiendas online ligeras y rápidas · Víctor Kuminov",
 		metaDescription:
-			"E-commerce que te pertenece, sin alquiler mensual de plataforma. Panel propio, pagos, envíos, Verifactu con tu gestor. Desde 7.500 € + IVA. Ventas en 40+ países.",
+			"E-commerce que te pertenece, sin alquiler mensual de plataforma. Panel propio, pagos, envíos, Verifactu con tu gestor. Desde 3.900 € + IVA. Ventas en 40+ países.",
 		h1: "Tiendas online ligeras, rápidas y fáciles de gestionar",
 		lead: "Un e-commerce que vende desde el primer día, que tu equipo lleva sin depender de nadie y que es tuyo. Pagas el desarrollo una vez, sin cuota mensual de plataforma.",
 		forWhom: [
@@ -164,9 +164,9 @@ export const services: Service[] = [
 			text: "Mi cliente más antiguo lleva más de 10 años vendiendo con la tienda que construí. Hoy vende en más de 40 países.",
 		},
 		pricing: {
-			price: "desde 7.500 €",
+			price: "desde 3.900 €",
 			notes: [
-				"Proyecto típico: 7.500-18.000 €.",
+				"Proyecto típico: 3.900-9.000 €.",
 				"Plazo: 4-8 semanas.",
 				"Después solo pagas el alojamiento y, si quieres, un plan de mantenimiento.",
 			],
@@ -247,8 +247,8 @@ export const services: Service[] = [
 		pricing: {
 			price: "presupuesto cerrado",
 			notes: [
-				"Lo fijo tras la auditoría (450 €, se descuenta del proyecto).",
-				"Si además quieres un diseño nuevo, se calcula como tienda online: desde 7.500 €.",
+				"Lo fijo tras la auditoría (290 €, se descuenta del proyecto).",
+				"Si además quieres un diseño nuevo, se calcula como tienda online: desde 3.900 €.",
 			],
 		},
 		faq: [
@@ -290,7 +290,7 @@ export const services: Service[] = [
 		blocks: [
 			{
 				title: "¿Seguro que necesitas una app?",
-				text: "Te lo diré en la primera llamada. Si tu caso se resuelve con una web, te lo digo y te ahorro miles de euros. Solo construyo apps que tienen sentido.",
+				text: "Te lo diré en mi primera respuesta. Si tu caso se resuelve con una web, te lo digo y te ahorro miles de euros. Solo construyo apps que tienen sentido.",
 			},
 			{
 				title: "Por qué este precio",
@@ -322,10 +322,10 @@ export const services: Service[] = [
 		group: "build",
 		name: "Rescate de proyectos",
 		short: "¿Pagaste por una web que no vende? Averiguo por qué y la pongo a funcionar.",
-		price: "desde 2.500 €",
+		price: "desde 1.200 €",
 		metaTitle: "Rescate de webs y tiendas que no venden · Víctor Kuminov",
 		metaDescription:
-			"Tu web o tu tienda no vende o se quedó a medias. Auditoría estratégica de 450 € y rescate desde 2.500 € + IVA. Lo rehago o te devuelvo el dinero.",
+			"Tu web o tu tienda no vende o se quedó a medias. Auditoría estratégica de 290 € y rescate desde 1.200 € + IVA. Lo rehago o te devuelvo el dinero.",
 		h1: "Tu web no vende. Averiguo por qué y la arreglo.",
 		lead: "Arreglo lo que otros no supieron hacer. Si pagaste por una web o una tienda y nunca llegó a vender, o te la dejaron a medias, eso es justo lo mío.",
 		forWhom: [
@@ -337,7 +337,7 @@ export const services: Service[] = [
 		steps: [
 			{
 				title: "Auditoría estratégica",
-				text: "Analizo técnica, diseño y conversión. Recibes un informe claro y una videollamada de 60 minutos.",
+				text: "Analizo técnica, diseño y conversión. Recibes un informe claro por escrito y resuelvo tus dudas por mensaje.",
 			},
 			{
 				title: "Plan con prioridades",
@@ -357,10 +357,10 @@ export const services: Service[] = [
 			text: "Una fábrica histórica de artesanía llevaba medio año con una tienda que no vendía nada. La relancé en menos de un mes y por una fracción de lo que habían pagado. Más de diez años después sigue conmigo.",
 		},
 		pricing: {
-			price: "desde 2.500 €",
+			price: "desde 1.200 €",
 			notes: [
-				"Entrada: auditoría estratégica, 450 €. Si me encargas el rescate, se descuenta entera.",
-				"Rescate típico: 2.500-8.000 €.",
+				"Entrada: auditoría estratégica, 290 €. Si me encargas el rescate, se descuenta entera.",
+				"Rescate típico: 1.200-4.000 €.",
 			],
 		},
 		faq: [
@@ -445,11 +445,11 @@ export const services: Service[] = [
 		group: "sector",
 		name: "Carta QR y pedidos en mesa",
 		short: "Para sidrerías, restaurantes y bares: el cliente escanea, pide desde la mesa y el camarero lo recibe al momento.",
-		price: "presupuesto a medida",
+		price: "desde 490 €",
 		badge: "demo",
 		metaTitle: "Carta QR y pedidos desde la mesa para hostelería · Víctor Kuminov",
 		metaDescription:
-			"Carta digital con código QR y pedidos desde la mesa sin instalar nada. El camarero recibe el pedido con el número de mesa. Para sidrerías, restaurantes y bares.",
+			"Carta digital con código QR y pedidos desde la mesa sin instalar nada. El camarero recibe el pedido con el número de mesa. Para sidrerías, restaurantes y bares. Desde 490 € + IVA.",
 		h1: "Carta digital y pedidos desde la mesa",
 		lead: "Para sidrerías, restaurantes, bares y cafeterías. El cliente escanea el código de la mesa, ve la carta en su móvil sin instalar nada y pide. El pedido llega al camarero con el número de mesa.",
 		blocks: [
@@ -472,13 +472,16 @@ export const services: Service[] = [
 			},
 		],
 		pricing: {
-			price: "presupuesto a medida",
-			notes: ["Depende del número de mesas, de idiomas y de si quieres la carta solo para ver o también para pedir."],
+			price: "desde 490 €",
+			notes: [
+				"Carta QR con carteles de mesa: desde 490 €. Con pedidos al camarero, el precio depende del número de mesas y de idiomas.",
+				"Alojamiento, panel y soporte: 29 €/mes.",
+			],
 		},
 		faq: [
 			{
 				q: "¿Puedo verlo funcionando antes?",
-				a: "Sí. Tengo una demo de un café: te la enseño en una videollamada o te paso el enlace por WhatsApp.",
+				a: "Sí. Tengo una demo de un café: te paso el enlace por WhatsApp o por email.",
 			},
 			{
 				q: "¿Quién cambia los precios y los platos del día?",
@@ -492,7 +495,7 @@ export const services: Service[] = [
 		group: "sector",
 		name: "Vende tu producto al mundo",
 		short: "Tienda en varios idiomas y envíos internacionales para productores, artesanos y marcas de aquí.",
-		price: "desde 7.500 €",
+		price: "desde 3.900 €",
 		metaTitle: "Vende tus productos al mundo: tienda online multilingüe · Víctor Kuminov",
 		metaDescription:
 			"Tienda online en varios idiomas, pagos internacionales y envíos por país para productores y artesanos. Lo hice con una fábrica de artesanía que hoy vende en 40+ países.",
@@ -522,7 +525,7 @@ export const services: Service[] = [
 			text: "Una fábrica histórica de artesanía vende con mi tienda desde hace más de diez años. Sus piezas viajan a Nueva Zelanda, Bali, Australia, América y toda Europa.",
 		},
 		pricing: {
-			price: "desde 7.500 €",
+			price: "desde 3.900 €",
 			notes: [
 				"Se calcula como una tienda online, con los idiomas y países que necesites.",
 				"Traducción de una tienda que ya tienes: presupuesto según el volumen del catálogo.",
@@ -575,8 +578,8 @@ export const services: Service[] = [
 			price: "desde 100 €/mes",
 			notes: [
 				"Visibilidad en IA: 100-150 €/mes como módulo del mantenimiento.",
-				"SEO técnico continuo y contenidos: incluidos en el plan Growth (950 €/mes).",
-				"Auditoría SEO puntual: dentro de la auditoría estratégica (450 €).",
+				"SEO técnico continuo y contenidos: incluidos en el plan Growth (190 €/mes).",
+				"Auditoría SEO puntual: dentro de la auditoría estratégica (290 €).",
 			],
 		},
 		faq: [
@@ -596,10 +599,10 @@ export const services: Service[] = [
 		group: "grow",
 		name: "Mantenimiento y soporte",
 		short: "Tu web vigilada a diario, siempre actualizada y con alguien que responde. Tu equipo técnico, sin contratarlo.",
-		price: "desde 490 €/mes",
+		price: "desde 79 €/mes",
 		metaTitle: "Mantenimiento web y soporte mensual · Víctor Kuminov",
 		metaDescription:
-			"Planes de mantenimiento Care, Growth y Partner: vigilancia diaria, copias, seguridad, mejoras y soporte prioritario. Desde 490 €/mes + IVA.",
+			"Planes de mantenimiento Care, Growth y Partner: vigilancia diaria, copias, seguridad, mejoras y soporte prioritario. Desde 79 €/mes + IVA.",
 		h1: "Mantenimiento: tu equipo técnico, sin contratarlo",
 		lead: "Lanzar la web es el principio. Después alguien tiene que vigilarla, actualizarla y atender tus cambios. Ese alguien soy yo.",
 		blocks: [
@@ -617,12 +620,12 @@ export const services: Service[] = [
 			},
 		],
 		pricing: {
-			price: "desde 490 €/mes",
+			price: "desde 79 €/mes",
 			notes: [
-				"Care, 490 €/mes: actualizaciones, seguridad, copias, soporte prioritario y hasta 3 h de cambios al mes.",
-				"Growth, 950 €/mes: todo lo de Care más experimentos de conversión, SEO técnico e informe mensual.",
-				"Partner, 1.900 €/mes: tu equipo técnico externo, con bolsa de horas y estrategia trimestral.",
-				"Trabajos puntuales sin plan: 90 €/h, bono desde 5 horas.",
+				"Care, 79 €/mes: vigilancia diaria, actualizaciones, seguridad, copias y soporte por escrito. Los cambios, aparte.",
+				"Growth, 190 €/mes: todo lo de Care más 2 h de cambios al mes, SEO técnico e informe mensual.",
+				"Partner, 490 €/mes: tu equipo técnico externo, con 6 h de trabajo al mes, prioridad y estrategia trimestral.",
+				"Trabajos puntuales sin plan: 60 €/h, bono desde 5 horas.",
 			],
 		},
 		faq: [
@@ -653,10 +656,10 @@ export const extras = [
 	},
 	{
 		title: "Auditoría estratégica",
-		text: "Técnica, diseño y conversión de tu web, tienda o app. Informe y videollamada de 60 minutos. 450 €, se descuentan del proyecto.",
+		text: "Técnica, diseño y conversión de tu web, tienda o app. Informe claro por escrito. 290 €, se descuentan del proyecto.",
 	},
 	{
 		title: "Trabajos puntuales",
-		text: "Arreglos y cambios concretos sin plan mensual. 90 €/h, bono desde 5 horas.",
+		text: "Arreglos y cambios concretos sin plan mensual. 60 €/h, bono desde 5 horas.",
 	},
 ];
